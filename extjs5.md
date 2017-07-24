@@ -1,4 +1,4 @@
-## ExtJs5.x 学习文档
+## Extjs5.x Example 学习文档
 
 >* package 创建规则
 >* wro4j & extjs 压缩、合并js
