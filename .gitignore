@@ -16,3 +16,4 @@ _book
 *.pdf
 
 *.D_Store
+.idea
