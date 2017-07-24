@@ -9,7 +9,7 @@
 >* 错误 & 调试
 
 ## 介绍
-* 此文档适用 Extjs5.x MVC 开发模式,开发人员通过此文档来规范开发[example文档](https://javady.gitbooks.io/extjs5-mvc-learning/content/dev.html)
+* 此文档适用 Extjs5.x MVC 开发模式,开发人员通过此文档来规范开发[extjs5 example文档](https://javady.gitbooks.io/extjs5-mvc-learning/content/dev.html)
 
 ### 特点
 * 简单易学。
