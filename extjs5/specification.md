@@ -1,4 +1,4 @@
-# 前端javascript开发规范文档
+# 前端javascript开发规范文档 (extjs5)
 
 [TOC]
 
