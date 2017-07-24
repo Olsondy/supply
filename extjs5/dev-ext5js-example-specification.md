@@ -24,18 +24,10 @@
 * <font color='purple'>【强制】</font>&nbsp;前缀应当是名词。(函数的名字前缀为动词，以此区分变量和函数)
 
 * <font color='green'>【正例】</font>
-		```javascript
-			var maxCount = 10;
-			var tableTitle = 'LoginTable';
-		```
-		
-* <font color='red'>【反例】</font>
-
-		```javascript
-			var setCount = 10;
-			var getTitle = 'LoginTable';
-
-		```
+```javascript
+	var maxCount = 10;
+	var tableTitle = 'LoginTable';
+```
 		
 ### Function
 * <font color='purple'>【强制】</font>&nbsp;小驼峰式命名法。
