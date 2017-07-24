@@ -15,5 +15,5 @@ _book
 *.mobi
 *.pdf
 
-*.D_Store
+*.DS_Store
 .idea
