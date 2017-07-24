@@ -51,31 +51,31 @@
 ### MVC模式的目录及文件名命名规约
 * <font color='green'>【正例】</font>
 	```javascript
-		- - pages
-		- - scripts
-			- - pageDir  //页面一
-				- - controller 
+		+- - pages
+		+- - scripts
+			+- - pageDir  //页面一
+				+- - controller 
 					- - prefixController.js
 						...
-				- - store
+				+- - store
 					- - prefixStore.js
 						...
-				- - model
+				+- - model
 					- - prefixModel.js
 						...
-				- - view  
-					- - viewFloder
-						- - prefix...Window
-						- - prefix...Form
-						- - prefix...Grid
+				+- - view  
+					+- - viewFloder
+						- - prefix...Window.js
+						- - prefix...Form.js
+						- - prefix...Grid.js
 							...
-					- - ViewPort    
+					- - Viewport.js
 				- - application.js   //mvc 程序入口
-			- - twoModule    //页面二
+			+- - twoModule    //页面二
 					...
-			- - threeModule  //页面三
+			+- - threeModule  //页面三
 					...
-		- - styles
+		+- - styles
 	```
 * <font color='purple'>【强制】</font>&nbsp;当前模块有不同页面都要在`scripts`下新增不同页面的目录.
 
