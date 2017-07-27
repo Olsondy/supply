@@ -78,7 +78,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 ```java
     @Resource
     private ZookeeperConfigGroup configGroup;
-    System.out.println(configGroup.get("cool"));
+    System.out.println(configGroup.get("test"));
 ```
                                                                                                                                                                                                                                                                                                                                        
 *  `applicationContext.xml`的schema配置
