@@ -26,10 +26,10 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 * 创建实例配置文件
 
-       $ cd zookeeper-3.4.10/conf
-       $ cp zoo_sample.cfg zoo1.cfg
-       $ cp zoo_sample.cfg zoo2.cfg
-       $ cp zoo_sample.cfg zoo3.cfg
+        $ cd zookeeper-3.4.10/conf
+        $ cp zoo_sample.cfg zoo1.cfg
+        $ cp zoo_sample.cfg zoo2.cfg
+        $ cp zoo_sample.cfg zoo3.cfg
 
 * 修改配置文件
 
@@ -229,7 +229,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     
    <!-- Your business bean Inject property with used spring style -->
    <!--<bean class="">-->
-   <!--<property name="name" value="#{demoPropertyGroup['name']}" />-->
+   <!--<property name="name" value="#{demoPropertyGroup['key']}" />-->
    <!--</bean>-->
 ```
 
