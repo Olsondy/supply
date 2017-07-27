@@ -38,9 +38,9 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         tickTime=2000
         initLimit=10
         syncLimit=5
-        dataDir=/tmp/zookeeper/d_1
+        dataDir=/tmp/zookeeper/datas/data_1
         clientPort=2181
-        dataLogDir=/usr/zookeeper-3.4.6/logs_1
+        dataLogDir=/usr/zookeeper-3.4.6/logs/logs_1
         server.1=localhost:2887:3887
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
@@ -50,9 +50,9 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         tickTime=2000
         initLimit=10
         syncLimit=5
-        dataDir=/tmp/zookeeper/d_2
+        dataDir=/tmp/zookeeper/datas/data_2
         clientPort=2182
-        dataLogDir=/usr/zookeeper-3.4.6/logs_2
+        dataLogDir=/usr/zookeeper-3.4.6/logs/logs_2
         server.1=localhost:2887:3887
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
