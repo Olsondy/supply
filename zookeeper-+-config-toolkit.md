@@ -71,9 +71,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     GeneralConfigGroup group = new ZookeeperConfigGroup(configProfile, "demoPropertyGroup");
     
     String stringProperty = group.get("test");
-    Preconditions.checkState("hello".equals(stringProperty));
-    String intProperty = group.get("config.int");
-    Preconditions.checkState(7758 == Integer.parseInt(intProperty));                  
+    Preconditions.checkState("cool".equals(stringProperty));               
 ```
                                                                                                                                                                                                                                                                                                                                        
 *  `applicationContext.xml`的schema配置
