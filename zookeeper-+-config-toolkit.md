@@ -140,10 +140,10 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
     ====创建节点
     WatchedEvent state:SyncConnected type:None path:null
     ====查看节点是否安装成功
-    znode1
+    demoModule
     ====修改节点的数据
     ====查看修改的节点是否成功
-    cjw2015
+    test
     ====删除节点
     ====查看节点是否被删除
     节点状态：null
