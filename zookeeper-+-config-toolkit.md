@@ -11,7 +11,94 @@
 zookeeper是为分布式应用设计的一个高性能协调服务，提供了如下的通用服务，如命名、配置管理、通过锁和分组服务，封装成简单易用的接口而无需开发人员从头编写代码。可以拿来即用，应用的领域有取得共识、分组管理、领导者选举和协议呈现。还可以按需自定义功能 [官网介绍](http://zookeeper.apache.org)
 
 ### Quick Start
+    cd /usr
+    rz -by
+    tar xf zookeeper-3.4.6.tar.gz
 
+#### 单机模式
+1. 把解压目录下conf/zoo_sample.cfg复制一份在同目录下，重命名为zoo.cfg,dataDir属性可设置成别的
+2. 执行解压目录下的bin/zkServer.sh start开启zookeeper
+3. 执行解压目录下的bin/zkCli.sh -server 127.0.0.1:2181连接zookeeper
+
+
+#### ZooKeeper伪分布式集群安装
+伪分布式集群：在一台Server中，启动多个ZooKeeper的实例。
+上传并解压安装包
+* 创建实例配置文件
+
+        cd zookeeper-3.4.6/conf
+        cp zoo_sample.cfg zoo1.cfg
+        cp zoo_sample.cfg zoo2.cfg
+        cp zoo_sample.cfg zoo3.cfg
+
+* 修改配置文件
+
+---------实例1的配置 vi zoo1.cfg--------
+
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/tmp/zookeeper/d_1
+clientPort=2181
+dataLogDir=/usr/zookeeper-3.4.6/logs_1
+server.1=localhost:2887:3887
+server.2=localhost:2888:3888
+server.3=localhost:2889:3889
+
+---------实例2的配置 vi zoo1.cfg--------
+
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/tmp/zookeeper/d_2
+clientPort=2182
+dataLogDir=/usr/zookeeper-3.4.6/logs_2
+server.1=localhost:2887:3887
+server.2=localhost:2888:3888
+server.3=localhost:2889:3889
+
+---------实例3的配置 vi zoo1.cfg--------
+
+tickTime=2000
+initLimit=10
+syncLimit=5
+dataDir=/tmp/zookeeper/d_3
+clientPort=2183
+dataLogDir=/usr/zookeeper-3.4.6/logs_3
+server.1=localhost:2887:3887
+server.2=localhost:2888:3888
+server.3=localhost:2889:3889
+
+
+3.准备启动环境
+
+mkdir /tmp/zookeeper/d_1
+mkdir /tmp/zookeeper/d_2
+mkdir /tmp/zookeeper/d_3
+
+mkdir /usr/zookeeper-3.4.6/logs_1
+mkdir /usr/zookeeper-3.4.6/logs_2
+mkdir /usr/zookeeper-3.4.6/logs_3
+
+echo "1" > /tmp/zookeeper/d_1/myid
+echo "2" > /tmp/zookeeper/d_2/myid
+echo "3" > /tmp/zookeeper/d_3/myid
+
+4.启动集群
+
+/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo1.cfg
+/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo2.cfg
+/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo3.cfg
+
+5.查看是否启动成功
+
+jps
+
+#看到类似下面的进程就表示3个实例均启动成功
+13419 QuorumPeerMain
+13460 QuorumPeerMain
+13561 Jps
+13392 QuorumPeerMain
 ## Config Toolkit
 Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit 用于简化从本地配置文件到 Zookeeper 的迁移。在大型集群和分布式应用中，配置不宜分散到集群结点中，应该集中管理。
 
