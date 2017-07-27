@@ -53,7 +53,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     >* 访问 http://localhost:8080/config-web
     >* 点击"切换根节点"，输入/projectx/modulex，密码abc
     >* 点击"新建版本"，输入1.0.0
-    >* 左侧的组管理，输入group，点击"创建"
+    >* 左侧的组管理，输入demoPropertyGroup，点击"创建"
     >* 在右侧添加两个配置，分别为test=cool
     >* 项目中加载配置
     >* 添加maven依赖
@@ -68,9 +68,9 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 * 使用Java代码直接获取配置
 ```java
     ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("xx.xx.xx.xx:2181", "/demoProject/demoModule", "1.0.0");
-    GeneralConfigGroup group = new ZookeeperConfigGroup(configProfile, "group");
+    GeneralConfigGroup group = new ZookeeperConfigGroup(configProfile, "demoPropertyGroup");
     
-    String stringProperty = group.get("config.str");
+    String stringProperty = group.get("test");
     Preconditions.checkState("hello".equals(stringProperty));
     String intProperty = group.get("config.int");
     Preconditions.checkState(7758 == Integer.parseInt(intProperty));                  
