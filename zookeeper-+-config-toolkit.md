@@ -40,13 +40,13 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 * applicationContext.xml 使用sping的SPEL方式来配置
 ```xml
     <config:profile connect-str="localhost:2181" root-node="/projectx/modulex" version="1.0.0"/>
-<config:group id="groupProp" node="group"/>
-
-<!-- Your business bean -->
-<bean class="your.BusinessBean">
-<property name="strProp" value="#{groupProp['config.str']}" />
-<property name="intProp" value="#{groupProp['config.int']}" />
-</bean>
+    <config:group id="groupProp" node="group"/>
+    
+    <!-- Your business bean -->
+    <bean class="your.BusinessBean">
+    <property name="strProp" value="#{groupProp['config.str']}" />
+    <property name="intProp" value="#{groupProp['config.int']}" />
+    </bean>
 ```
 
 
