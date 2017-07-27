@@ -217,6 +217,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
             https://crnlmchina.github.io/config
             https://crnlmchina.github.io/config/config.xsd">
 ```
+
 *  `applicationContext.xml` 结合`spring` SPEL方式注入配置
 ```xml
      <!--SpringUtil Web Configuration -->
