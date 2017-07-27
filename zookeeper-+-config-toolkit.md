@@ -80,9 +80,9 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         mkdir /usr/zookeeper-3.4.6/logs/logs_2
         mkdir /usr/zookeeper-3.4.6/logs/logs_3
         
-        echo "1" > /tmp/zookeeper/d_1/myid
-        echo "2" > /tmp/zookeeper/d_2/myid
-        echo "3" > /tmp/zookeeper/d_3/myid
+        echo "1" > /tmp/zookeeper/data_1/myid
+        echo "2" > /tmp/zookeeper/data_2/myid
+        echo "3" > /tmp/zookeeper/data_3/myid
 
 * 启动集群
 
