@@ -27,8 +27,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 >* 版本控制，支持灰度发布
 >* 支持为配置项添加注释
 
-
-### quick start
+### Quick Start
 
 
 
