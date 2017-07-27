@@ -13,7 +13,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 ### Quick Start
     cd /usr
     rz -by
-    tar xf zookeeper-3.4.10.tar.gz
+    tar -xvf zookeeper-3.4.10.tar.gz
 
 #### 单机模式
 1. 把解压目录下conf/zoo_sample.cfg复制一份在同目录下，重命名为zoo.cfg,dataDir属性可设置成别的
