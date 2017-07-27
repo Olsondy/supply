@@ -41,7 +41,14 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 *  创建初始权限配置    
     * 使用命令行创建Zookeeper配置根节点，根节点密码使用sha1加密，如果要使用明文密码，可以自行修改`config-zk-web`的鉴权部分代码 以根路径为`/demoProject/demoModule`密码为 `1` 为例
 
-    
+    ```python
+        python -c "import hashlib;print hashlib.sha1('abc').hexdigest();"
+        # a9993e364706816aba3e25717850c26c9cd0d89d
+        zkCli.sh -server localhost:2181
+        create /projectx 1
+        create /projectx/modulex a9993e364706816aba3e25717850c26c9cd0d89d
+    ```            
+                                                                        
 *  `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
