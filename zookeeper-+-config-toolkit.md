@@ -64,7 +64,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         syncLimit=5
         dataDir=/tmp/zookeeper/datas/data_3
         clientPort=2183
-        dataLogDir=/usr/zookeeper-3.4.6/logs/logs_3
+        dataLogDir=/usr/zookeeper-3.4.10/logs/logs_3
         server.1=localhost:2887:3887
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
