@@ -133,7 +133,6 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
             zk.delete("/demoProject", -1);
             System.out.println("====查看节点是否被删除");
             System.out.println("节点状态：" + zk.exists("/demoProject", false));
-            
             zk.close();
         }
     }
