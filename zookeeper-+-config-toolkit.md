@@ -106,7 +106,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 ```java
     
 ```
-    
+
 ## Config Toolkit
 Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit 用于简化从本地配置文件到 Zookeeper 的迁移。在大型集群和分布式应用中，配置不宜分散到集群结点中，应该集中管理。
 
