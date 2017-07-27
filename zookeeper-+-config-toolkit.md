@@ -54,7 +54,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     >* 点击"切换根节点"，输入/projectx/modulex，密码abc
     >* 点击"新建版本"，输入1.0.0
     >* 左侧的组管理，输入group，点击"创建"
-    >* 在右侧添加两个配置，分别为config.str=hello, config.int=7758
+    >* 在右侧添加两个配置，分别为test=cool
     >* 项目中加载配置
     >* 添加maven依赖
     ```xml
