@@ -3,7 +3,7 @@
 
 [TOC]
 
-## introduction
+## Introduction
 >* Zookeeper
 >* Config Toolkit
 
