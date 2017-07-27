@@ -11,9 +11,9 @@
 zookeeper是为分布式应用设计的一个高性能协调服务，提供了如下的通用服务，如命名、配置管理、通过锁和分组服务，封装成简单易用的接口而无需开发人员从头编写代码。可以拿来即用，应用的领域有取得共识、分组管理、领导者选举和协议呈现。还可以按需自定义功能 [官网介绍](http://zookeeper.apache.org)
 
 ### Quick Start
-    cd /usr
-    rz -by
-    tar -xvf zookeeper-3.4.10.tar.gz
+       $ cd /usr
+       $ rz -by
+       $ tar -xvf zookeeper-3.4.10.tar.gz
 
 #### 单机模式
 1. 把解压目录下conf/zoo_sample.cfg复制一份在同目录下，重命名为zoo.cfg,dataDir属性可设置成别的
@@ -33,7 +33,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 * 修改配置文件
 
-        ---------实例1的配置 vi zoo1.cfg--------
+        ---------实例1的配置 $ vi zoo1.cfg--------
         
         tickTime=2000
         initLimit=10
@@ -45,7 +45,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
 
-        ---------实例2的配置 vi zoo1.cfg--------
+        ---------实例2的配置 $ vi zoo1.cfg--------
         
         tickTime=2000
         initLimit=10
@@ -57,7 +57,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
 
-        ---------实例3的配置 vi zoo1.cfg--------
+        ---------实例3的配置 $ vi zoo1.cfg--------
         
         tickTime=2000
         initLimit=10
@@ -92,14 +92,14 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
     
 * 查看是否启动成功
 
-    `$ jps`
+       $ jps
 
 * 看到类似下面的进程就表示3个实例均启动成功
     ```
-        13419 QuorumPeerMain
-        13460 QuorumPeerMain
-        13561 Jps
-        13392 QuorumPeerMain
+    13419 QuorumPeerMain
+    13460 QuorumPeerMain
+    13561 Jps
+    13392 QuorumPeerMain
     ```
     
 * Java客户端测试
