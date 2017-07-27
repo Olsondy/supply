@@ -123,7 +123,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
                 
             };
             
-            ZooKeeper zk = new ZooKeeper("192.168.157.22:2181", 3000, watcher);
+            ZooKeeper zk = new ZooKeeper("xx.xx.xx.xx:2181", 3000, watcher);
             System.out.println("====创建节点");
             zk.create("/cjw", "znode1".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             System.out.println("====查看节点是否安装成功");
