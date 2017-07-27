@@ -30,6 +30,11 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 >* 支持为配置项添加注释
 
 ### Quick Start
-
+* 安装config-toolkit工具包
+```java
+	git clone https://github.com/dangdangdotcom/config-toolkit.git
+	cd config-toolkit/config-zk-web
+	mvn package
+```
 
 
