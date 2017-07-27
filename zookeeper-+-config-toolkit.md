@@ -38,6 +38,9 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
 ```
 *  将编译好的`config-web.war`部署到tomcat即可
 
+*  创建初始权限配置    
+    * 使用命令行创建Zookeeper配置根节点，根节点密码使用sha1加密，如果要使用明文密码，可以自行修改`config-zk-web`的鉴权部分代码 以根路径为`/demoProject/demoModule`密码为 `1` 为例
+    
 *  `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
