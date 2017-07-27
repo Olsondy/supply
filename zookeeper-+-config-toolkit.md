@@ -103,7 +103,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
     ```
     
 * Java客户端测试
-```java
+    ```java
     import org.apache.zookeeper.CreateMode;
     import org.apache.zookeeper.WatchedEvent;
     import org.apache.zookeeper.Watcher;
