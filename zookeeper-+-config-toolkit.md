@@ -26,7 +26,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 上传并解压安装包
 * 创建实例配置文件
 
-        cd zookeeper-3.4.6/conf
+        cd zookeeper-3.4.10/conf
         cp zoo_sample.cfg zoo1.cfg
         cp zoo_sample.cfg zoo2.cfg
         cp zoo_sample.cfg zoo3.cfg
@@ -40,7 +40,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         syncLimit=5
         dataDir=/tmp/zookeeper/datas/data_1
         clientPort=2181
-        dataLogDir=/usr/zookeeper-3.4.6/logs/logs_1
+        dataLogDir=/usr/zookeeper-3.4.10/logs/logs_1
         server.1=localhost:2887:3887
         server.2=localhost:2887:3888
         server.3=localhost:2887:3889
