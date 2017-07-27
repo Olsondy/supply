@@ -45,10 +45,26 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
         python -c "import hashlib;print hashlib.sha1('1').hexdigest();"  
         # 356a192b7913b04c54574d18c28d46e6395428ab
         zkCli.sh -server localhost:2181
-        create /projectx 1
-        create /projectx/modulex 356a192b7913b04c54574d18c28d46e6395428ab
+        create /demoProject 1  
+        create /demoProject/demoModule 356a192b7913b04c54574d18c28d46e6395428ab
     ```            
-                                                                        
+* 登录config-web，创建示例配置
+
+    >* 访问 http://localhost:8080/config-web
+    >* 点击"切换根节点"，输入/projectx/modulex，密码abc
+    >* 点击"新建版本"，输入1.0.0
+    >* 左侧的组管理，输入group，点击"创建"
+    >* 在右侧添加两个配置，分别为config.str=hello, config.int=7758
+    >* 项目中加载配置
+    >* 添加maven依赖
+    ```xml
+    <dependency>
+      <groupId>com.dangdang</groupId>
+      <artifactId>config-toolkit</artifactId>
+      <version>3.2.3-RELEASE</version>
+    </dependency>
+    ```
+                                                                                                                                                                              
 *  `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
