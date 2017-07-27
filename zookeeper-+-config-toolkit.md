@@ -37,6 +37,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     mvn package
 ```
 * 将编译好的config-web.war部署到tomcat即可
+
 * `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
