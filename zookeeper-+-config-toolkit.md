@@ -33,41 +33,41 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 * 修改配置文件
 
----------实例1的配置 vi zoo1.cfg--------
+        ---------实例1的配置 vi zoo1.cfg--------
+        
+        tickTime=2000
+        initLimit=10
+        syncLimit=5
+        dataDir=/tmp/zookeeper/d_1
+        clientPort=2181
+        dataLogDir=/usr/zookeeper-3.4.6/logs_1
+        server.1=localhost:2887:3887
+        server.2=localhost:2887:3888
+        server.3=localhost:2887:3889
 
-tickTime=2000
-initLimit=10
-syncLimit=5
-dataDir=/tmp/zookeeper/d_1
-clientPort=2181
-dataLogDir=/usr/zookeeper-3.4.6/logs_1
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
+        ---------实例2的配置 vi zoo1.cfg--------
+        
+        tickTime=2000
+        initLimit=10
+        syncLimit=5
+        dataDir=/tmp/zookeeper/d_2
+        clientPort=2182
+        dataLogDir=/usr/zookeeper-3.4.6/logs_2
+        server.1=localhost:2887:3887
+        server.2=localhost:2887:3888
+        server.3=localhost:2887:3889
 
----------实例2的配置 vi zoo1.cfg--------
-
-tickTime=2000
-initLimit=10
-syncLimit=5
-dataDir=/tmp/zookeeper/d_2
-clientPort=2182
-dataLogDir=/usr/zookeeper-3.4.6/logs_2
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
-
----------实例3的配置 vi zoo1.cfg--------
-
-tickTime=2000
-initLimit=10
-syncLimit=5
-dataDir=/tmp/zookeeper/d_3
-clientPort=2183
-dataLogDir=/usr/zookeeper-3.4.6/logs_3
-server.1=localhost:2887:3887
-server.2=localhost:2888:3888
-server.3=localhost:2889:3889
+        ---------实例3的配置 vi zoo1.cfg--------
+        
+        tickTime=2000
+        initLimit=10
+        syncLimit=5
+        dataDir=/tmp/zookeeper/d_3
+        clientPort=2183
+        dataLogDir=/usr/zookeeper-3.4.6/logs_3
+        server.1=localhost:2887:3887
+        server.2=localhost:2888:3888
+        server.3=localhost:2887:3889
 
 
 3.准备启动环境
