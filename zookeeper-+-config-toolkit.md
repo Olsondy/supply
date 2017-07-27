@@ -21,7 +21,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 3. 执行解压目录下的bin/zkCli.sh -server 127.0.0.1:2181连接zookeeper
 
 
-## ZooKeeper伪分布式集群安装
+### ZooKeeper伪分布式集群安装
 伪分布式集群：在一台Server中，启动多个ZooKeeper的实例。上传并解压安装包
 
 * 创建实例配置文件
