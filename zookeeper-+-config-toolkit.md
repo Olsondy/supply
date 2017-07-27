@@ -154,22 +154,6 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
       <version>3.2.3-RELEASE</version>
     </dependency>
     ```
-    
-* 使用Java代码直接获取配置
-```java
-    ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("xx.xx.xx.xx:2181", "/demoProject/demoModule", "1.0.0");
-    GeneralConfigGroup group = new ZookeeperConfigGroup(configProfile, "demoPropertyGroup");
-    
-    String stringProperty = group.get("test");
-    Preconditions.checkState("cool".equals(stringProperty));             
-```
-
-* 使用spring注入获取配置
-```java
-    @Resource
-    private ZookeeperConfigGroup configGroup;
-    System.out.println(configGroup.get("test"));
-```
                                                                                                                                                                                                                                                                                                                                        
 *  `applicationContext.xml`的schema配置
 ```xml
@@ -200,5 +184,22 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     <property name="intProp" value="#{groupProp['config.int']}" />
     </bean>
 ```
+
+* 使用Java代码直接获取配置
+```java
+    ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("xx.xx.xx.xx:2181", "/demoProject/demoModule", "1.0.0");
+    GeneralConfigGroup group = new ZookeeperConfigGroup(configProfile, "demoPropertyGroup");
+    
+    String stringProperty = group.get("test");
+    Preconditions.checkState("cool".equals(stringProperty));             
+```
+
+* 使用spring注入获取配置
+```java
+    @Resource
+    private ZookeeperConfigGroup configGroup;
+    System.out.println(configGroup.get("test"));
+```
+
 
 
