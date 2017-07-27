@@ -130,9 +130,9 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
             System.out.println("====查看修改的节点是否成功");
             System.out.println(new String(zk.getData("/demoProject", false, null)));
             System.out.println("====删除节点");
-            zk.delete("/cjw", -1);
+            zk.delete("/demoProject", -1);
             System.out.println("====查看节点是否被删除");
-            System.out.println("节点状态：" + zk.exists("/cjw", false));
+            System.out.println("节点状态：" + zk.exists("/demoProject", false));
             
             zk.close();
         }
