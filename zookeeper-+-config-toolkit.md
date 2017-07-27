@@ -23,6 +23,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 ## ZooKeeper伪分布式集群安装
 伪分布式集群：在一台Server中，启动多个ZooKeeper的实例。上传并解压安装包
+
 * 创建实例配置文件
 
        $ cd zookeeper-3.4.10/conf
