@@ -70,35 +70,38 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
         server.3=localhost:2887:3889
 
 
-3.准备启动环境
+* 准备启动环境
 
-mkdir /tmp/zookeeper/d_1
-mkdir /tmp/zookeeper/d_2
-mkdir /tmp/zookeeper/d_3
+        mkdir /tmp/zookeeper/d_1
+        mkdir /tmp/zookeeper/d_2
+        mkdir /tmp/zookeeper/d_3
+        
+        mkdir /usr/zookeeper-3.4.6/logs_1
+        mkdir /usr/zookeeper-3.4.6/logs_2
+        mkdir /usr/zookeeper-3.4.6/logs_3
+        
+        echo "1" > /tmp/zookeeper/d_1/myid
+        echo "2" > /tmp/zookeeper/d_2/myid
+        echo "3" > /tmp/zookeeper/d_3/myid
 
-mkdir /usr/zookeeper-3.4.6/logs_1
-mkdir /usr/zookeeper-3.4.6/logs_2
-mkdir /usr/zookeeper-3.4.6/logs_3
+* 启动集群
 
-echo "1" > /tmp/zookeeper/d_1/myid
-echo "2" > /tmp/zookeeper/d_2/myid
-echo "3" > /tmp/zookeeper/d_3/myid
+        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo1.cfg
+        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo2.cfg
+        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo3.cfg
+    
+* 查看是否启动成功
 
-4.启动集群
+    `jps`
 
-/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo1.cfg
-/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo2.cfg
-/usr/zookeeper-3.4.6/bin/zkServer.sh start zoo3.cfg
-
-5.查看是否启动成功
-
-jps
-
-#看到类似下面的进程就表示3个实例均启动成功
-13419 QuorumPeerMain
-13460 QuorumPeerMain
-13561 Jps
-13392 QuorumPeerMain
+* 看到类似下面的进程就表示3个实例均启动成功
+    ```
+    13419 QuorumPeerMain
+    13460 QuorumPeerMain
+    13561 Jps
+    13392 QuorumPeerMain
+    ```
+    
 ## Config Toolkit
 Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit 用于简化从本地配置文件到 Zookeeper 的迁移。在大型集群和分布式应用中，配置不宜分散到集群结点中，应该集中管理。
 
