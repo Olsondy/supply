@@ -1,4 +1,6 @@
-# 分布式应用配置工具包config-toolkit 用于集群配置向 zookeeper的迁移 
+# 配置集中管理搭建
+    分布式应用配置工具包config-toolkit 用于集群配置向 zookeeper的迁移 
+
 [TOC]
 ## intr
     - zookeeper
