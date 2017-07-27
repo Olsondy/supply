@@ -37,10 +37,28 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     mvn package
 ```
 * 将编译好的config-web.war部署到tomcat即可
-* applicationContext.xml 结合spring SPEL方式注入配置
+* `applicationContext.xml`的schema配置
 ```xml
-    <config:profile connect-str="localhost:2181" root-node="/projectx/modulex" version="1.0.0"/>
-    <config:group id="groupProp" node="group"/>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:config="https://crnlmchina.github.io/config"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans
+        	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/util
+            http://www.springframework.org/schema/util/spring-util-4.0.xsd
+            https://crnlmchina.github.io/config
+            https://crnlmchina.github.io/config/config.xsd">
+```
+* `applicationContext.xml` 结合`spring` SPEL方式注入配置
+```xml
+     <!--SpringUtil Web Configuration -->
+    <util:properties id="configToolkitConfigs" location="classpath*:config.properties"/>
+    <!--SPEL zookeeper  集成-->
+    <config:profile connect-str="#{configToolkitConfigs['zk.address']}" root-node="/demoProject/demoModule"
+                    version="#{configToolkitConfigs['zk.configs.version']}"/>
+    <config:group id="demoPropertyGroup" node="demoProperty-group"/>
     
     <!-- Your business bean -->
     <bean class="your.BusinessBean">
