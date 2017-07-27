@@ -46,7 +46,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
         # 356a192b7913b04c54574d18c28d46e6395428ab
         zkCli.sh -server localhost:2181
         create /projectx 1
-        create /projectx/modulex a9993e364706816aba3e25717850c26c9cd0d89d
+        create /projectx/modulex 356a192b7913b04c54574d18c28d46e6395428ab
     ```            
                                                                         
 *  `applicationContext.xml`的schema配置
