@@ -36,7 +36,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     cd config-toolkit/config-zk-web
     mvn package
 ```
-*  将编译好的config-web.war部署到tomcat即可
+*  将编译好的`config-web.war`部署到tomcat即可
 
 *  `applicationContext.xml`的schema配置
 ```xml
