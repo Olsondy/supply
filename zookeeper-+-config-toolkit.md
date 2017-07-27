@@ -96,10 +96,10 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 * 看到类似下面的进程就表示3个实例均启动成功
     ```
-    13419 QuorumPeerMain
-    13460 QuorumPeerMain
-    13561 Jps
-    13392 QuorumPeerMain
+        13419 QuorumPeerMain
+        13460 QuorumPeerMain
+        13561 Jps
+        13392 QuorumPeerMain
     ```
     
 * Java客户端测试
