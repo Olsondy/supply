@@ -44,8 +44,8 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:config="https://crnlmchina.github.io/config"
        xsi:schemaLocation="
-			http://www.springframework.org/schema/beans
-        	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	    http://www.springframework.org/schema/beans
+    	    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
             http://www.springframework.org/schema/util
             http://www.springframework.org/schema/util/spring-util-4.0.xsd
             https://crnlmchina.github.io/config
