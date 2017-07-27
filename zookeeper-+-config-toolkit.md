@@ -15,13 +15,13 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
        $ rz -by
        $ tar -xvf zookeeper-3.4.10.tar.gz
 
-#### 单机模式
+### 单机模式
 1. 把解压目录下conf/zoo_sample.cfg复制一份在同目录下，重命名为zoo.cfg,dataDir属性可设置成别的
 2. 执行解压目录下的bin/zkServer.sh start开启zookeeper
 3. 执行解压目录下的bin/zkCli.sh -server 127.0.0.1:2181连接zookeeper
 
 
-#### ZooKeeper伪分布式集群安装
+## ZooKeeper伪分布式集群安装
 伪分布式集群：在一台Server中，启动多个ZooKeeper的实例。
 上传并解压安装包
 * 创建实例配置文件
