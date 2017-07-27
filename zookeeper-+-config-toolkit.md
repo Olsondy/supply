@@ -227,11 +227,10 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
                     version="#{configToolkitConfigs['zk.configs.version']}"/>
     <config:group id="demoPropertyGroup" node="demoProperty-group"/>
     
-    <!-- Your business bean -->
-    <bean class="your.BusinessBean">
-    <property name="strProp" value="#{groupProp['config.str']}" />
-    <property name="intProp" value="#{groupProp['config.int']}" />
-    </bean>
+   <!-- Your business bean Inject property with used spring style -->
+   <!--<bean class="">-->
+   <!--<property name="name" value="#{demoPropertyGroup['name']}" />-->
+   <!--</bean>-->
 ```
 
 ### JavaCode
