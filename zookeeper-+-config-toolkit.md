@@ -202,7 +202,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     </dependency>
     ```
 
-### Spring SPEL                                                                                                                                                                                                                                                                                                                                      
+### Make Use Spring SPEL                                                                                                                                                                                                                                                                                                                                      
 *  `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
