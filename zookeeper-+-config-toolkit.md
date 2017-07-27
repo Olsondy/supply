@@ -201,7 +201,8 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
       <version>3.2.3-RELEASE</version>
     </dependency>
     ```
-                                                                                                                                                                                                                                                                                                                                       
+
+### config                                                                                                                                                                                                                                                                                                                                      
 *  `applicationContext.xml`的schema配置
 ```xml
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -231,7 +232,7 @@ Config Toolkit 是大型集群和分布式应用配置工具包。Config Toolkit
     <property name="intProp" value="#{groupProp['config.int']}" />
     </bean>
 ```
-
+### User
 * 使用Java代码直接获取配置
 ```java
     ZookeeperConfigProfile configProfile = new ZookeeperConfigProfile("xx.xx.xx.xx:2181", "/demoProject/demoModule", "1.0.0");
