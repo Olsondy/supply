@@ -125,7 +125,7 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
             
             ZooKeeper zk = new ZooKeeper("xx.xx.xx.xx:2181", 3000, watcher);
             System.out.println("====创建节点");
-            zk.create("/demoProject", "/demoPropertyGroup".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+            zk.create("/demoProject", "/demoModule".getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
             System.out.println("====查看节点是否安装成功");
             System.out.println(new String(zk.getData("/cjw", false, null)));
             System.out.println("====修改节点的数据");
