@@ -26,10 +26,10 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 上传并解压安装包
 * 创建实例配置文件
 
-        cd zookeeper-3.4.10/conf
-        cp zoo_sample.cfg zoo1.cfg
-        cp zoo_sample.cfg zoo2.cfg
-        cp zoo_sample.cfg zoo3.cfg
+       $ cd zookeeper-3.4.10/conf
+       $ cp zoo_sample.cfg zoo1.cfg
+       $ cp zoo_sample.cfg zoo2.cfg
+       $ cp zoo_sample.cfg zoo3.cfg
 
 * 修改配置文件
 
@@ -72,27 +72,27 @@ zookeeper是为分布式应用设计的一个高性能协调服务，提供了�
 
 * 准备启动环境
 
-        mkdir /tmp/zookeeper/datas/data_1
-        mkdir /tmp/zookeeper/datas/data_2
-        mkdir /tmp/zookeeper/datas/data_3
+       $ mkdir /tmp/zookeeper/datas/data_1
+       $ mkdir /tmp/zookeeper/datas/data_2
+       $ mkdir /tmp/zookeeper/datas/data_3
         
-        mkdir /usr/zookeeper-3.4.10/logs/logs_1
-        mkdir /usr/zookeeper-3.4.10/logs/logs_2
-        mkdir /usr/zookeeper-3.4.10/logs/logs_3
+       $ mkdir /usr/zookeeper-3.4.10/logs/logs_1
+       $ mkdir /usr/zookeeper-3.4.10/logs/logs_2
+       $ mkdir /usr/zookeeper-3.4.10/logs/logs_3
         
-        echo "1" > /tmp/zookeeper/data_1/myid
-        echo "2" > /tmp/zookeeper/data_2/myid
-        echo "3" > /tmp/zookeeper/data_3/myid
+       $ echo "1" > /tmp/zookeeper/data_1/myid
+       $ echo "2" > /tmp/zookeeper/data_2/myid
+       $ echo "3" > /tmp/zookeeper/data_3/myid
 
 * 启动集群
 
-        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo1.cfg
-        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo2.cfg
-        /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo3.cfg
+       $ /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo1.cfg
+       $ /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo2.cfg
+       $ /usr/zookeeper-3.4.10/bin/zkServer.sh start zoo3.cfg
     
 * 查看是否启动成功
 
-    `jps`
+    `$ jps`
 
 * 看到类似下面的进程就表示3个实例均启动成功
     ```
