@@ -25,24 +25,27 @@
 * 每个节点都连线使用256mb RAM，所以这个集群在大多数系统上应该运行正常。 我的i7 / 8gb笔记本电脑的负载为1。
 
 ### Status Web UI
-Go take a look: http://172.20.20.12:8500/ui (the vagrant cluster defines your ips explicitly, so you can just follow this link.)
-It’s pretty straight forward, so just poke around. You can view all registered services and the nodes instances of your service are running on, or go to the “Nodes” tab and see a list of nodes with the services running on each. There are also health check status and key/value tabs that we’ll talk about later.
-CLI Tool
+* 去看看：http://172.20.20.12:8500/ui （vagrant集群明确定义你的ips，所以你可以按照这个链接。）
+您可以查看所有已注册的服务，并且您的服务的节点实例正在运行，或者转到“节点”选项卡，并查看每个运行服务的节点列表。 还有健康检查状态和键/值选项卡，稍后我们将讨论CLI工具
 
-To try out the cli tool, you need to get onto one of the cluster nodes. From there you can can find out more about whats going on.
-```$ vagrant ssh demo
-  $ consul members
-  demo      172.20.20.15:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
-  status    172.20.20.12:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
-  consul1   172.20.20.10:8301  alive  role=consul,dc=dc1,vsn=1,vsn_min=1,vsn_max=1,port=8300,bootstrap=1
-  consul2   172.20.20.11:8301  alive  role=consul,dc=dc1,vsn=1,vsn_min=1,vsn_max=1,port=8300
-  service2  172.20.20.14:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
-  service1  172.20.20.13:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
-```
-You should also check out:
-* consul info - some general info about your cluster
-* consul monitor - stream log output
-* the documentation…
+* 要尝试使用cli工具，您需要到达其中一个集群节点。 从那里你可以找到更多关于发生的事情
+
+  ```
+    $ vagrant ssh demo
+    $ consul members
+    demo      172.20.20.15:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
+    status    172.20.20.12:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
+    consul1   172.20.20.10:8301  alive  role=consul,dc=dc1,vsn=1,vsn_min=1,vsn_max=1,port=8300,bootstrap=1
+    consul2   172.20.20.11:8301  alive  role=consul,dc=dc1,vsn=1,vsn_min=1,vsn_max=1,port=8300
+    service2  172.20.20.14:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
+    service1  172.20.20.13:8301  alive  role=node,dc=dc1,vsn=1,vsn_min=1,vsn_max=1
+  ```
+
+* 你也可以这样查看:
+  * consul info - some general info about your cluster
+  * consul monitor - stream log output
+  * the documentation…
+  
 REST API
 
 You can do everything through the REST API. Including managing your cluster, registering services, working with key/values… everything.
