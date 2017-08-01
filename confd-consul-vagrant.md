@@ -2,29 +2,27 @@
 
 > 2017 / 07／31
 
+> 在软件基础设施越来越活跃的环境中，与其他服务及其环境的服务的动态沟通越来越重要。
 
-在软件基础设施越来越活跃的环境中，与其他服务及其环境的服务的动态沟通越来越重要。
+> 使用REST在服务之间进行通信基本上是一个没有意义的事情，但是使用REST API定位服务或替换配置文件并不是一个决定。 当然，使用GoDaddy GUI将域名连接到IP，或者在几十个服务器上维护配置文件似乎也不是正确的。
 
-使用REST在服务之间进行通信基本上是一个没有意义的事情，但是使用REST API定位服务或替换配置文件并不是一个决定。 当然，使用GoDaddy GUI将域名连接到IP，或者在几十个服务器上维护配置文件似乎也不是正确的。
+> 诸如Consul和Confd等新兴解决方案有助于解决这个问题。 consul采取一种方法，提供REST API的灵活性以及DNS（自定义DNS服务器）的可移植性。 Confd利用由Consul维护的集中式键/值存储库来公开一个静态配置（动态更新）。
 
-诸如Consul和Confd等新兴解决方案有助于解决这个问题。 consul采取一种方法，提供REST API的灵活性以及DNS（自定义DNS服务器）的可移植性。 Confd利用由Consul维护的集中式键/值存储库来公开一个静态配置（动态更新）。
+> 两者的快速入门指南是相当稳固的，所以我不会做一个设置教程。 相反，我会给你一个工作集群的旅程，并指导你如何做一些常见的事情。 要遵循这一切，您需要在Vagrant中运行6个节点示例环境
 
-两者的快速入门指南是相当稳固的，所以我不会做一个设置教程。 相反，我会给你一个工作集群的旅程，并指导你如何做一些常见的事情。 要遵循这一切，您需要在Vagrant中运行6个节点示例环境。
-
-Look through the [Vagrantfile]() to get an idea of what we’re setting up, but essentially we are building:
+看看 [Vagrantfile](https://github.com/javady/vagrantFiles/blob/master/consul-cluster-vagrant/Vagrantfile) 可以帮助我们构建正在做的哪些事情：
 * 2 consul server agents
 * 1 consul agent hosting a “status” web gui
 * 2 example service nodes
 * 1 demo web-app that will interact with the service
+```
   $ git clone git@github.com:benschw/consul-cluster-vagrant.git
   $ cd consul-cluster-vagrant
   $ vagrant up
-Some notes
+```
+#### 笔记
 
-* I’ve included dependencies in the /bin folder, but if you don’t trust me you can replace the binaries with other copies (see the README.md for where I got each.)
-* confd is built off of master as consul support won’t be baked in until the 0.4 release.
-* Each node is wired to use 256mb ram, so this cluster should run OK on most systems. My i7/8gb laptop stays under a load of 1.
-Some things to try out
+* 每个节点都连线使用256mb RAM，所以这个集群在大多数系统上应该运行正常。 我的i7 / 8gb笔记本电脑的负载为1。
 
 ### Status Web UI
 Go take a look: http://172.20.20.12:8500/ui (the vagrant cluster defines your ips explicitly, so you can just follow this link.)
