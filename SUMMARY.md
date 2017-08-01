@@ -7,4 +7,5 @@
 * [hbdp-framework](hbdp-framework.md)
 * [zookeeper + config-toolkit](zookeeper-+-config-toolkit.md)
 * [zookeeper VS consul](zookeeper-vs-consul.md)
+* [confd consul vagrant](confd-consul-vagrant.md)
 
