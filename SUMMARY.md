@@ -8,4 +8,5 @@
 * [zookeeper + config-toolkit](zookeeper-+-config-toolkit.md)
 * [zookeeper VS consul](zookeeper-vs-consul.md)
 * [confd consul vagrant](confd-consul-vagrant.md)
+* [vue2+vue-router+vuex](vue2+vue-router+vuex.md)
 
