@@ -96,3 +96,4 @@ vue2.x 封装的网站快速成型工具包
 > leo-face 脚手架使用了俩个ui组件库的组件.组件内部使用互不影响,但会有依赖的css样式冲突
 
 ### axios ###
+基于http客户端的promise，面向浏览器和nodejs
