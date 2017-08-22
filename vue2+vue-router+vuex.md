@@ -32,8 +32,8 @@
 	|   |-- common                       // 公共模块目录
 	|           |-- api                  // http请求方法
 	|           |-- components           // 公共通用组件
-	|           |-- config               // 配置
-	|           |-- font                 // 字体
+	|           |-- config               // 路由加载配置
+	|           |-- font                 // 全局自定义字体
 	|           |-- main                 // 首页布局模板
 	|           |-- plugins              // 插件目录
 	|           |-- router               // 路由配置
