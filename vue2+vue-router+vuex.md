@@ -31,7 +31,7 @@
 	|   |-- assets                       // 图片资源目录
 	|   |-- common                       // 公共模块目录
 	|           |-- api           	      // http请求方法
-	|           |-- components           // 通用组件
+	|           |-- components           // 公共通用组件
 	|           |-- config          // 公共头部
 	|           |-- font           // 公共头部
 	|           |-- main           // 公共头部
