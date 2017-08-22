@@ -110,18 +110,20 @@ vue2.x 封装的网站快速成型工具包
        http.get(getUrl, params).then(data =>{
  	
        }).catch(error=>{
-          //必须catch promise 异常处理
+          //必须catch axios的 promise 异常处理
+       })
+
+       //post or put请求  请求url、请求json对象、请求方法
+       http.mergePostAndPut(reqUrl, params,reqMethod).then(data =>{ 
+
+       }).catch(error=>{
+          //必须catch axios的 promise 异常处理
        })
        
-       /* post or put请求
-        * @param reqUrl 请求url
-        * @param params 请求json对象内容
-        * @param reqMethod 请求方法
-        */
-       http.mergePostAndPut(reqUrl, params,reqMethod) {
+       http.delete(delUrl).then(data =>{  //delete 请求
  	
        }).catch(error=>{
-          //必须catch promise 异常处理
+          //必须catch axios的 promise 异常处理
        })
 
   ```
