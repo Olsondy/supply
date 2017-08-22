@@ -82,7 +82,7 @@
 	npm run build
 
 ## 浏览器 ##
-现代的浏览器和Internet Explorer 9。
+现代浏览器和Internet Explorer 9+
 
 ## 组件说明与使用 ##
 ### Element & iView ###
