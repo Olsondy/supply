@@ -82,7 +82,7 @@
 	npm run build
 
 ## 浏览器 ##
-现代浏览器和Internet Explorer 9+
+基于Chorme内核的现代浏览和Internet Explorer 9+
 
 ## 相关组件说明与演示 ##
 ### Element & iView ###
