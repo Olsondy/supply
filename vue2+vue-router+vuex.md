@@ -48,17 +48,26 @@
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
 	|-- .editorconfig                    // 代码编写规格
+	|-- .eslintignore                    // 需要忽略js语法及代码风格的目录
+	|-- .eslintrc.js                     // 检查js语法错误及代码风格
+	|-- package.json                     // 项目及工具的依赖配置文件
+	|-- README.md                        // 说明
+	|-- .babelrc                         // ES6语法编译配置
+	|-- .editorconfig                    // 代码编写规格
 	|-- .gitignore                       // 忽略的文件
 	|-- index.html                       // 入口html文件
 	|-- package.json                     // 项目及工具的依赖配置文件
 	|-- README.md                        // 说明
 
 
+
+
+
 ## 安装步骤 ##
 
-	git clone https://github.com/lin-xin/manage-system.git      // 把模板下载到本地
-	cd manage-system    // 进入模板目录
-	npm install         // 安装项目依赖，等待安装完成之后
+	git clone http://code.hoau.net/itiaoling-sc/leo-face.git     // 下载到本地
+	cd leo-face    // 进入项目录
+	npm install      // 安装项目依赖，等待安装完成之后
 
 ## 本地开发 ##
 
