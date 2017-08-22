@@ -113,8 +113,12 @@ vue2.x 封装的网站快速成型工具包
           //必须catch promise 异常处理
        })
        
-       //post or put请求
-       http.get(getUrl, params).then(data =>{
+       /* post or put请求
+        * @param reqUrl 请求url
+        * @param params 请求json对象内容
+        * @param reqMethod 请求方法
+        */
+       http.mergePostAndPut(reqUrl, params,reqMethod) {
  	
        }).catch(error=>{
           //必须catch promise 异常处理
