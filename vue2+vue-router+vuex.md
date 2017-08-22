@@ -88,4 +88,4 @@ vue.js封装的网站快速成型工具
 ** 源码地址 **
 - [Element](https://github.com/ElemeFE/element) <p><img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads"></p>
 - [iView](https://github.com/iview/iview/) 
-<img src="http://img.shields.io/npm/dm/iview.svg" alt="Downloads">
+<p><img src="http://img.shields.io/npm/dm/iview.svg" alt="Downloads"><p>
