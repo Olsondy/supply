@@ -151,6 +151,6 @@
     });
 ```
 
-> 提示: 在目录/common/fetch.js中封装了 请求和响应相关promise hock 
+> 提示: 在目录/common/utils/fetch.js中封装了axios http请求和响应相关promise hock 
 
 
