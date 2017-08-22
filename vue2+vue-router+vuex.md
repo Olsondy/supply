@@ -1,4 +1,4 @@
-# 使用vue搭建前后端分离的SPA应用
+# leo-face 学习脚手架 (基于vue.js的SPA应用)
 
 > 前言
 
@@ -67,7 +67,9 @@
 
 	git clone http://code.hoau.net/itiaoling-sc/leo-face.git     // 下载到本地
 	cd leo-face      // 进入工程目录
-	npm install      // 安装项目依赖，等待安装完成之后
+	npm i           // 安装项目依赖，等待安装完成之后
+	or      
+	npm i --registry=https://registry.npm.taobao.org
 
 ## 本地开发 ##
 
@@ -79,4 +81,4 @@
 	// 执行构建命令，生成的dist文件夹放在服务器下即可访问
 	npm run build
 
-## 组件使用说明与演示 ##
+## 组件简单使用说明与演示 ##
