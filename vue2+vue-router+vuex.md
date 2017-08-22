@@ -137,7 +137,6 @@ vue2.x 封装的网站快速成型工具包
             if (user){
               commit('SET_NAME', user.userChineseName);  
               commit('SET_CODE', user.userCode);
-              resolve(user);
             } else {
               return Message({
                 message: '获取用户信息失败',
