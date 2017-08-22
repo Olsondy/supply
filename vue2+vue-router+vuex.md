@@ -18,7 +18,7 @@
 - [x] 登录
 - [x] 分页表格
 - [x] 表单 (选择组件、可搜索选择组件)
-- [x] http api封装
+- [x] axios http请求封装
 - [x] server 异常拦截处理
 - [x] 数据的增删改查操作例子
 
@@ -94,3 +94,5 @@ vue2.x 封装的网站快速成型工具包
 <p><img src="http://img.shields.io/npm/dm/iview.svg" alt="Downloads"><p>
 
 > leo-face 脚手架使用了俩个ui组件库的组件.组件内部使用互不影响,但会有依赖的css样式冲突
+
+### axios ###
