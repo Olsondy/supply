@@ -151,6 +151,6 @@
     });
 ```
 
-> 提示: 在目录/common/utils/fetch.js中封装了axios httpRequest和httpResponse相关promise hook
+> 提示: 在目录common/utils/fetch.js中封装了axios httpRequest和httpResponse相关promise hook
 
 
