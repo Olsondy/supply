@@ -99,8 +99,6 @@ vue2.x 封装的网站快速成型工具包
 基于http客户端的promise，面向浏览器和nodejs
 > vue更新到2.0之后，就宣告不再对vue-resource更新，而是推荐的axios
 
-
-
 ```JavaScript
 <template>
     <div>
