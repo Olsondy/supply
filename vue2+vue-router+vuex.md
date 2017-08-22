@@ -82,11 +82,11 @@
 	npm run build
 
 ## 浏览器 ##
-基于Chorme内核的现代浏览和Internet Explorer 9+
+基于Chorme内核的现代浏览器和Internet Explorer 9+
 
 ## 相关组件说明与演示 ##
 ### Element & iView ###
-基于vue2.x 封装的网站快速成型工具包
+基于vue2.x封装的网站快速成型工具包
 	
 ** 源码地址 **
 - [Element](https://github.com/ElemeFE/element) <p><img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads"></p>
