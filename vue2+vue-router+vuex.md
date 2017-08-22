@@ -30,6 +30,15 @@
 	|-- src                              // 源码目录
 	|   |-- assets                       // 图片资源目录
 	|   |-- common                       // 公共模块目录
+	|           |-- api           	      // http请求方法
+	|           |-- components           // 通用组件
+	|           |-- config          // 公共头部
+	|           |-- font           // 公共头部
+	|           |-- main           // 公共头部
+	|           |-- plugins           // 公共头部
+	|           |-- router           // 公共头部
+	|           |-- styles           // 公共头部
+	|           |-- utils           // 公共头部
 	|   |-- components                   // 项目组件目录
 	|           |-- Header.vue           // 公共头部
 	|           |-- Home.vue             // 公共路由入口
