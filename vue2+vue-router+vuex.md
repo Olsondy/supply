@@ -83,8 +83,8 @@
 
 ## 组件使用说明与演示 ##
 ### Element & iView ###
-vue.js封装的网站快速成型工具 <a href="https://npmjs.org/package/element-ui"><img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads"></a>
+vue.js封装的网站快速成型工具
 	
 ** 源码地址 **
-- [Element](https://github.com/ElemeFE/element) <img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads">
-- [iView](https://github.com/iview/iview/) <img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads">
+- [Element](https://github.com/ElemeFE/element) <p><img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads"></p>
+- [iView](https://github.com/iview/iview/) <img src="http://img.shields.io/npm/dm/iview.svg" alt="Downloads">
