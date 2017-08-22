@@ -17,7 +17,7 @@
 - [x] 布局(菜单、头部、内容)
 - [x] 登录
 - [x] 分页表格
-- [x] 简单表单 (选择组件、可搜索选择组件)
+- [x] 表单 (选择组件、可搜索选择组件)
 - [x] http api封装
 - [x] server 异常拦截处理
 - [x] 数据的增删改查操作例子
@@ -66,7 +66,7 @@
 ## 安装步骤 ##
 
 	git clone http://code.hoau.net/itiaoling-sc/leo-face.git     // 下载到本地
-	cd leo-face    // 进入项目录
+	cd leo-face      // 进入工程目录
 	npm install      // 安装项目依赖，等待安装完成之后
 
 ## 本地开发 ##
