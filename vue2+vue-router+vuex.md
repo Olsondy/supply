@@ -28,12 +28,13 @@
 	|-- build                            // webpack配置文件
 	|-- config                           // 项目打包路径
 	|-- src                              // 源码目录
-	|   |-- components                   // 组件
-	|       |-- common                   // 公共组件
+	|   |-- assets                       // 图片资源目录
+	|   |-- common                   // 组件
+	|   |-- components                   // 公共组件
 	|           |-- Header.vue           // 公共头部
 	|           |-- Home.vue           	 // 公共路由入口
 	|           |-- Sidebar.vue          // 公共左边栏
-	|		|-- page                   	 // 主要路由页面
+	|	       |-- page                   	 // 主要路由页面
 	|           |-- BaseCharts.vue       // 基础图表
 	|           |-- BaseForm.vue         // 基础表单
 	|           |-- BaseTable.vue        // 基础表格
