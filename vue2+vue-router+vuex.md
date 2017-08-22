@@ -81,6 +81,9 @@
 	// 执行构建命令，生成的dist文件夹放在服务器下即可访问
 	npm run build
 
+## 浏览器 ##
+现代的浏览器和Internet Explorer 9。
+
 ## 组件说明与使用 ##
 ### Element & iView ###
 vue2.x 封装的网站快速成型工具包
