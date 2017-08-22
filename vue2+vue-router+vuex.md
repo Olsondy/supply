@@ -30,29 +30,18 @@
 	|-- src                              // 源码目录
 	|   |-- assets                       // 图片资源目录
 	|   |-- common                       // 公共模块目录
-	|           |-- api           	      // http请求方法
+	|           |-- api                  // http请求方法
 	|           |-- components           // 公共通用组件
-	|           |-- config          // 公共头部
-	|           |-- font           // 公共头部
-	|           |-- main           // 公共头部
-	|           |-- plugins           // 公共头部
-	|           |-- router           // 公共头部
-	|           |-- styles           // 公共头部
-	|           |-- utils           // 公共头部
+	|           |-- config               // 配置
+	|           |-- font                 // 字体
+	|           |-- main                 // 首页布局
+	|           |-- plugins              // 插件目录
+	|           |-- router               // 路由配置
+	|           |-- styles               // 通用css样式
+	|           |-- utils                // filter 工具函数类
 	|   |-- components                   // 项目组件目录
-	|           |-- Header.vue           // 公共头部
-	|           |-- Home.vue             // 公共路由入口
-	|           |-- Sidebar.vue          // 公共左边栏
-	|	    |-- page                 // 主要路由页面
-	|           |-- BaseCharts.vue       // 基础图表
-	|           |-- BaseForm.vue         // 基础表单
-	|           |-- BaseTable.vue        // 基础表格
-	|           |-- Login.vue          	 // 登录
-	|           |-- Markdown.vue         // markdown组件
-	|           |-- Readme.vue           // 自述组件
-	|           |-- Upload.vue           // 图片上传
-	|           |-- VueEditor.vue        // 富文本编辑器
-	|           |-- VueTable.vue         // vue表格组件
+	|   |-- mock                         // 项目组件目录
+	|   |-- stores                       // 项目组件目录 
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
