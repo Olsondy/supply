@@ -105,7 +105,7 @@ vue2.x 封装的网站快速成型工具包
 
 项目中的使用
 ```JavaScript
-a
+asdafasdfasd
 ```
 
 
