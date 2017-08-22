@@ -131,11 +131,11 @@ vue2.x 封装的网站快速成型工具包
 - 例子
 ```php
      //获取用户信息
-     http.get('/users/v1/current').then(data => {  //异步执行
+     http.get('/users/v1/current').then(data => { 
           if (data){
             const user = data.result;
             if (user){
-              commit('SET_NAME', user.userChineseName);  // 存储名称
+              commit('SET_NAME', user.userChineseName);  
               commit('SET_CODE', user.userCode);
               resolve(user);
             } else {
@@ -148,9 +148,10 @@ vue2.x 封装的网站快速成型工具包
             }
           }
     }).catch(error => {
-       reject(error);
+       //异常后需要处理的流程
     });
 ```
 
+> 提示: 在fetch.js中封装了 请求和响应相关promise hock 
 
 
