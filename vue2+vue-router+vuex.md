@@ -84,4 +84,4 @@
 ## 组件使用说明与演示 ##
 ### Element & iView ###
 vue.js封装的网站快速成型工具,访问地址：[Element](https://github.com/ElemeFE/element)
-<p><a href="https://www.npmjs.com/package/element-ui"><img src="https://img.shields.io/npm/dm/vue-schart.svg" alt="Downloads"></a></p>
+<p><a href="https://npmjs.org/package/element-ui"><img src="https://npmjs.org/package/element-ui" alt="Downloads"></a></p>
