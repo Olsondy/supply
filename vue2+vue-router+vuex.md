@@ -1,4 +1,4 @@
-# leo-face 学习脚手架 (基于vue.js的SPA应用)
+# leo-face 学习脚手架 (基于vue渐进式框架的SPA应用)
 
 > 前言
 
