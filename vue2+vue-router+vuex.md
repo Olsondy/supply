@@ -29,8 +29,8 @@
 	|-- config                           // 项目打包路径
 	|-- src                              // 源码目录
 	|   |-- assets                       // 图片资源目录
-	|   |-- common                       // 组件
-	|   |-- components                   // 公共组件
+	|   |-- common                       // 公共模块目录
+	|   |-- components                   // 项目组件目录
 	|           |-- Header.vue           // 公共头部
 	|           |-- Home.vue             // 公共路由入口
 	|           |-- Sidebar.vue          // 公共左边栏
@@ -52,11 +52,6 @@
 	|-- .eslintrc.js                     // 检查js语法错误及代码风格
 	|-- .gitignore                       // git提交忽略的文件
 	|-- .npmrc                           // npm install 工具包配置
-	|-- package.json                     // 项目及工具的依赖配置文件
-	|-- README.md                        // 说明
-	|-- .babelrc                         // ES6语法编译配置
-	|-- .editorconfig                    // 代码编写规格
-	
 	|-- index.html                       // 入口html文件
 	|-- package.json                     // 项目及工具的依赖配置文件
 	|-- README.md                        // 说明
