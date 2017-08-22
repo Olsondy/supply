@@ -38,7 +38,7 @@
 	|           |-- plugins              // 插件目录
 	|           |-- router               // 路由配置
 	|           |-- styles               // 通用css样式
-	|           |-- utils                // filter 工具函数类
+	|           |-- utils                // 工具函数
 	|   |-- components                   // 当前项目单独组件
 	|   |-- mock                         // 模拟请求
 	|   |-- stores                       // vuex数据存储
@@ -86,7 +86,7 @@
 
 ## 相关组件说明与演示 ##
 ### Element & iView ###
-vue2.x 封装的网站快速成型工具包
+基于vue2.x 封装的网站快速成型工具包
 	
 ** 源码地址 **
 - [Element](https://github.com/ElemeFE/element) <p><img src="http://img.shields.io/npm/dm/element-ui.svg" alt="Downloads"></p>
@@ -151,6 +151,6 @@ vue2.x 封装的网站快速成型工具包
     });
 ```
 
-> 提示: 在fetch.js中封装了 请求和响应相关promise hock 
+> 提示: 在目录/common/fetch.js中封装了 请求和响应相关promise hock 
 
 
