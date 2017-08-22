@@ -106,7 +106,12 @@ vue2.x 封装的网站快速成型工具包
 ** 项目中的使用 **
 - 方法
   ```php
-  	http.get(getUrl, params) {
+       //get请求
+       http.get(getUrl, params).then(data =>{
+ 	
+       }).catch(error=>{
+          //必须catch promise 异常处理
+       })
   ```
   
 - 例子
