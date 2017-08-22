@@ -112,6 +112,14 @@ vue2.x 封装的网站快速成型工具包
        }).catch(error=>{
           //必须catch promise 异常处理
        })
+       
+       //post or put请求
+       http.get(getUrl, params).then(data =>{
+ 	
+       }).catch(error=>{
+          //必须catch promise 异常处理
+       })
+
   ```
   
 - 例子
