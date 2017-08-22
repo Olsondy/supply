@@ -102,7 +102,31 @@ vue2.x 封装的网站快速成型工具包
 ** 相关地址 **
 - [源码地址](https://github.com/mzabriskie/axios)
 - [中文翻译文档](https://segmentfault.com/a/1190000008470355)
- 项目中的使用 
+
+项目中的使用
+```JavaScript
+	http.get('/users/v1/current').then(data => { //异步执行
+	if (data){
+		const user = data.result;
+		if (user){
+		commit('SET_NAME', user.userChineseName); // 存储名称
+		commit('SET_CODE', user.userCode);
+		resolve(user);
+		} else {
+		return Message({
+		message: '获取用户信息失败',
+		type: 'error',
+		showClose: true,
+		duration: 5 * 1000
+		});
+		}
+		}
+		}).catch(error => {
+		reject(error);
+		});
+```
+
+
 
 
 
