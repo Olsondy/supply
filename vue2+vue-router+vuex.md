@@ -26,7 +26,7 @@
 ## 目录结构介绍 ##
 
 	|-- build                            // webpack配置文件
-	|-- config                           // 项目打包路径
+	|-- config                           // 项目打包运行环境配置
 	|-- src                              // 源码目录
 	|   |-- assets                       // 图片资源目录
 	|   |-- common                       // 公共模块目录
@@ -39,9 +39,11 @@
 	|           |-- router               // 路由配置
 	|           |-- styles               // 通用css样式
 	|           |-- utils                // filter 工具函数类
-	|   |-- components                   // 项目组件目录
-	|   |-- mock                         // 项目组件目录
-	|   |-- stores                       // 项目组件目录 
+	|   |-- components                   // 当前项目单独组件
+	|   |-- mock                         // 模拟请求
+	|   |-- stores                       // vuex数据存储
+	|   |-- styles                       // 当前项目css样式 
+	|   |-- views                        // 当前项目页面模块  
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
