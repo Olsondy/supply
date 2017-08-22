@@ -50,11 +50,13 @@
 	|-- .editorconfig                    // 代码编写规格
 	|-- .eslintignore                    // 需要忽略js语法及代码风格的配置
 	|-- .eslintrc.js                     // 检查js语法错误及代码风格
+	|-- .gitignore                       // git提交忽略的文件
+	|-- .npmrc                           // npm package 工具包配置
 	|-- package.json                     // 项目及工具的依赖配置文件
 	|-- README.md                        // 说明
 	|-- .babelrc                         // ES6语法编译配置
 	|-- .editorconfig                    // 代码编写规格
-	|-- .gitignore                       // 忽略的文件
+	
 	|-- index.html                       // 入口html文件
 	|-- package.json                     // 项目及工具的依赖配置文件
 	|-- README.md                        // 说明
