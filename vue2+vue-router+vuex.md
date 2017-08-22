@@ -34,7 +34,7 @@
 	|           |-- components           // 公共通用组件
 	|           |-- config               // 配置
 	|           |-- font                 // 字体
-	|           |-- main                 // 首页布局
+	|           |-- main                 // 首页布局模板
 	|           |-- plugins              // 插件目录
 	|           |-- router               // 路由配置
 	|           |-- styles               // 通用css样式
@@ -46,6 +46,9 @@
 	|   |-- views                        // 当前项目页面模块  
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
+	|    
+	|    ....
+	|   
 	|-- .babelrc                         // ES6语法编译配置
 	|-- .editorconfig                    // 代码编写规格
 	|-- .eslintignore                    // 需要忽略js语法及代码风格的配置
