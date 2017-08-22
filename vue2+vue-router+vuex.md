@@ -48,7 +48,7 @@
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
 	|-- .editorconfig                    // 代码编写规格
-	|-- .eslintignore                    // 需要忽略js语法及代码风格的目录
+	|-- .eslintignore                    // 需要忽略js语法及代码风格的配置
 	|-- .eslintrc.js                     // 检查js语法错误及代码风格
 	|-- package.json                     // 项目及工具的依赖配置文件
 	|-- README.md                        // 说明
