@@ -34,7 +34,7 @@
 	|           |-- Header.vue           // 公共头部
 	|           |-- Home.vue             // 公共路由入口
 	|           |-- Sidebar.vue          // 公共左边栏
-	|	    |-- page              // 主要路由页面
+	|	    |-- page                 // 主要路由页面
 	|           |-- BaseCharts.vue       // 基础图表
 	|           |-- BaseForm.vue         // 基础表单
 	|           |-- BaseTable.vue        // 基础表格
