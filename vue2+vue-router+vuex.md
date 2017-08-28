@@ -22,7 +22,7 @@ Authority Management System (权限管理系统)
 
 
 [![node](https://img.shields.io/node/v/webpack.svg)](https://github.com/nodejs/node)
-[![npm](https://img.shields.io/badge/3.5.5-blue.svg)](https://github.com/npm/npm)
+[![npm](https://img.shields.io/badge/npm-3.8.9-blue.svg)](https://github.com/npm/npm)
 [![webpack](https://img.shields.io/badge/webpack-2.6.1-blue.svg)](https://github.com/webpack/webpack)
 [![vue](https://img.shields.io/badge/vue-2.4.2-brightgreen.svg)](https://github.com/vuejs/vue)
 [![vuex](https://img.shields.io/badge/vuex-2.3.1-brightgreen.svg)](https://github.com/vuejs/vuex)
