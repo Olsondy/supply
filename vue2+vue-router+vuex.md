@@ -101,13 +101,13 @@ Authority Management System (权限管理系统)
 
 ## 测试环境 ##
 
-		// 执行构建命令，生成的dist文件夹放在服务器下即可访问
-		npm run build:test
+	// 执行构建命令，生成的dist文件夹放在服务器下即可访问
+	npm run build:test
 
 ## 生产环境 ##
 
-		// 执行构建命令，生成的dist文件夹放在服务器下即可访问
-		npm run build:prod
+	// 执行构建命令，生成的dist文件夹放在服务器下即可访问
+	npm run build:prod
 ## 构建生产分析 ##
 
 	// build for production and view the bundle analyzer report
