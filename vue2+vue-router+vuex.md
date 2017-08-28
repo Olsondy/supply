@@ -18,7 +18,7 @@ Authority Management System (权限管理系统)
 - 基本规范
  - 统一使用QA工具(eslint)规范进行编码,后续会有代码审查(详细使用在`.eslintrc`)
  - 项目中的错误日志统一使用`console.error`输出
- - 正在持续添加中....:sweat:
+ - 正在持续添加中.... :sweat:
 
 
 [![node](https://img.shields.io/node/v/webpack.svg)](https://github.com/nodejs/node)
