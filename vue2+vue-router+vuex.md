@@ -257,6 +257,7 @@ Authority Management System (权限管理系统)
 
 ### vue-router 路由
 项目中根据权限的数据生成的动态路由渲染菜单的[vue-router2官方文档](https://router.vuejs.org/zh-cn/)
+待补充.... :sweat:
 
 ### 布局 ###
 通用布局,见`common/main`目录
