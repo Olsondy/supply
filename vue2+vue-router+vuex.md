@@ -155,11 +155,11 @@ Authority Management System (权限管理系统)
 >项目已经在`main.js`中引入了相关依赖,在组件中直接按照官方例子使用即可,如需在js中单独使用,请使用`import`按需引入
 
 **相关地址**
-- [Element](https://github.com/ElemeFE/element) ,[官方教程](http://element.eleme.io/#/zh-CN)<p></p>
+- [Element](https://github.com/ElemeFE/element) ,[官方教程](http://element.eleme.io/#/zh-CN)<p></p>
 [![version](https://img.shields.io/badge/element--ui-1.4.2-brightgreen.svg)](https://github.com/ElemeFE/element)
 [![downloads](http://img.shields.io/npm/dm/element-ui.svg)](https://github.com/ElemeFE/element)
 
-- [iView](https://github.com/iview/iview/),[官方教程](https://www.iviewui.com)<p></p>
+- [iView](https://github.com/iview/iview/),[官方教程](https://www.iviewui.com)<p></p>
 [![version](https://img.shields.io/badge/iview-2.1-brightgreen.svg)](https://github.com/iview/iview/)
 [![downloads](http://img.shields.io/npm/dm/iview.svg)](https://github.com/iview/iview/)
 
