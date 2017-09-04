@@ -51,8 +51,9 @@ Authority Management System (权限管理系统)
 	- 规定使用`webstorm 2017.2 + eslint + babel`
 - 基本规范
  - 使用 ES6/ES2015 来编写代码。
- - 统一使用QA工具(eslint)规范进行编码,后续会有代码审查(详细使用在`.eslintrc`)
- - 项目中的错误日志统一使用`console.error`输出
+ - `nmp install` 成功后,在`webstorm`中设置`eslint`环境,统一使用QA工具(eslint)规范进行编码(详细使用在`.eslintrc.js`)
+ - 开发界面独立样式在组件中`style`里修改,其他统一的样式请不要修改.
+ - 菜单一定要放在`view`目录下,否则会导致路由加载不到页面的错误.
  - 待补充....  :sweat:
 
 
@@ -62,9 +63,8 @@ Authority Management System (权限管理系统)
 
 ## 功能 ##
 - [x] 布局(菜单、头部、导航、内容)
-- [x] 登录
 - [x] 路由导航,动态侧边栏（支持多级路由）
-- [x] 分页表格
+- [x] 查询表单的自适应,分页表格功能
 - [x] 表单 (选择组件、可搜索选择组件)
 - [x] http请求封装(get post put delete)
 - [x] store 状态数据存储
@@ -306,12 +306,18 @@ store.dipatch('login')
 ```javascript
 //main.js
 import router from 'common/router';
+import 'common/router/dynamicRouter';
 
 //router/index.js
+//创建路由
+export default new Router({
+  mode:'history',
+  base: '/leo-face/'
+});
+
+//router/dynamicRouter.js
 //设置当前系统的默认路由导航
-export const constantRouterMap = [{
-	path: '/login',component:_import('login/LoginPage'), hidden:true
-},
+const constantRouterMap = [
 {
 	path: '/',
 	name: '首页',
@@ -322,13 +328,6 @@ export const constantRouterMap = [{
 		{ path: '/main', component: homepage }
 	]
 }];
-//创建路由
-export default new Router({
-	mode:'history',  //此模式适用服务端
-	routes: constantRouterMap
-});
-
-//permissionMenu.js
 //导航拦截,用来完成跳转
 router.beforeEach((to, from, next) => {});
 //完成导航
@@ -358,44 +357,49 @@ router.afterEach(() => {});
 <template>
   <div class="app-container">
     <div class="filter-container">
-	<Form :label-width="80">
-        <el-row>
-          <el-col :span="5">
-            <Form-item label="系统编码">
-              <static-selector :params="codeSelector" ref="staticSelector"></static-selector>
-            </Form-item>
-          </el-col>
-
-          <el-col :span="5">
-            <Form-item label="系统名称">
-              <dynamic-selector :params="nameSelector" ref="dynamicSelector"></dynamic-selector>
-            </Form-item>
-          </el-col>
-
-          <el-col :span="5">
-            <Form-item label="系统编码">
-              <Input  placeholder="输入系统名称"/>
-            </Form-item>
-          </el-col>
-          <el-col :span="5">
-            <Form-item>
-              <Button size="small" type='primary' icon="search" @click="clickSearch">查 询</Button>
-              <Button size="small" type='primary' icon="refresh" @click="clickReset">重 置</Button>
-            </Form-item>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="5">
-            <Form-item label="系统名称">
-              <Input placeholder="输入系统名称"/>
-            </Form-item>
-          </el-col>
-          <el-col :span="6">
-            <Form-item label="创建日期">
-              <date-time-multiple :emptyText="dateEmptyText" ref="dateMultiple"></date-time-multiple>
-            </Form-item>
-          </el-col>
-        </el-row>
+        <Form :label-width="80">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="系统编码">
+                <static-selector :params="codeSelector" ref="staticSelector"></static-selector>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="系统名称">
+                <dynamic-selector :params="nameSelector" ref="dynamicSelector"></dynamic-selector>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="创建日期">
+                <date-time-multiple :emptyText="dateEmptyText" ref="dateMultiple"></date-time-multiple>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="测试布局">
+                <Input placeholder="测试表单响应式布局布局,不执行查询"/>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="测试布局">
+                <Input placeholder="测试表单响应式布局布局,不执行查询"/>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="测试布局">
+                <Input placeholder="测试表单响应式布局布局,不执行查询"/>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="测试布局">
+                <Input placeholder="测试表单响应式布局布局,不执行查询"/>
+              </Form-item>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="测试布局">
+                <Input placeholder="测试表单响应式布局布局,不执行查询"/>
+              </Form-item>
+            </div>
+        </div>
       </Form>
     </div>
     <div class="panel-container">
@@ -419,7 +423,7 @@ router.afterEach(() => {});
 			</el-col>
 			```
 
-  		- `script`
+		- `script`
 			```javascript
 			data () {
 			return {
@@ -448,7 +452,7 @@ router.afterEach(() => {});
 			data () {
 				return {
 					nameSelector: {
-						emptyText: '选择系统编码',  //设置默认文本提示,默认值是:'请选择'
+						emptyText: '搜索系统名称',  //设置默认文本提示,默认值是:'请选择'
 						remoteUrl: '/sub-systems/v1/systemName' //获取数据的url
 					}
 				}
@@ -472,6 +476,8 @@ router.afterEach(() => {});
 ```html
 <el-row class="filter-btn">
   <el-col align="right">
+    <Button size="small" type='primary' icon="search" @click="clickSearch">查 询</Button>
+    <Button size="small" type='primary' icon="refresh" @click="clickReset">重 置</Button>
     <Button size="small" icon="plus" @click="clickAdd">新 增</Button>
     <Button size="small" icon="edit" @click="clickUpdate" :disabled="updateDisabled">修 改</Button>
     <Button size="small" icon="trash-b" @click="clickDelete" :disabled="delDisabled">删 除</Button>
