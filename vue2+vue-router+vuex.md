@@ -46,27 +46,32 @@ Authority Management System (权限管理系统)
 [![vue-router](https://img.shields.io/badge/vue--router-2.5.3-brightgreen.svg)](https://github.com/vuejs/vue-router)
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 
-- 本项目使用的是vue-cli 脚手架生成的基于webpace的单页应用.[vue-cli 脚手架](https://cn.vuejs.org/v2/guide/installation.html)
+- 本项目使用的是vue-cli 脚手架生成的基于webpack的单页应用.[vue-cli 脚手架](https://cn.vuejs.org/v2/guide/installation.html)
 - 开发工具
 	- 规定使用`webstorm 2017.2 + eslint + babel`
-- 基本规范
+- 简要规范
  - 使用 ES6/ES2015 来编写代码。
- - 统一使用QA工具(eslint)规范进行编码,后续会有代码审查(详细使用在`.eslintrc`)
- - 项目中的错误日志统一使用`console.error`输出
- - 待补充....  :sweat:
+ - `nmp install` 成功后,在`webstorm`中设置`eslint`环境,遵守当前项目的`eslint`规范
+ - 按钮统一使用`iview UI`的`<Button>`组件
+ - 表单统一使用`iview UI`的`<Input>`组件
+ - 表格统一使用`element UI`的`<el-table>`
+ - 开发界面独立样式在组件中`style`标签下新增
+ - 菜单`.vue`组件一定要放在`view`目录下,否则会导致路由加载不到页面的错误.
+ - 业务异常的提示弹出不需要自己写,只需要写异常之后需要处理的业务.
+ - 操作成功的提示弹出层统一使用`element UI`的`message`组件.
 
-
+> 如组件页面有其他UI组件的需求,则需要和前端UI进行沟通
 
 ## 兼容性 ##
  基于Chrome内核的现代浏览器和Internet Explorer 10+
 
 ## 功能 ##
 - [x] 布局(菜单、头部、导航、内容)
-- [x] 登录
 - [x] 路由导航,动态侧边栏（支持多级路由）
-- [x] 分页表格
+- [x] 查询表单的自适应,分页表格功能
 - [x] 表单 (选择组件、可搜索选择组件)
 - [x] http请求封装(get post put delete)
+- [x] response异常统一处理
 - [x] store 状态数据存储
 - [x] mock数据
 - [x] http请求的国际化
@@ -98,7 +103,6 @@ Authority Management System (权限管理系统)
 	|   |-- views                        // 当前项目页面模块  
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
-	|   |-- permissionMenu.js            // 动态路由权限树菜单的生成
 	|    
 	|    ....
 	|   
@@ -160,7 +164,7 @@ Authority Management System (权限管理系统)
 [![downloads](http://img.shields.io/npm/dm/element-ui.svg)](https://github.com/ElemeFE/element)
 
 - [iView](https://github.com/iview/iview/),[官方教程](https://www.iviewui.com)<p></p>
-[![version](https://img.shields.io/badge/iview-2.1-brightgreen.svg)](https://github.com/iview/iview/)
+[![version](https://img.shields.io/badge/iview-2.3-brightgreen.svg)](https://github.com/iview/iview/)
 [![downloads](http://img.shields.io/npm/dm/iview.svg)](https://github.com/iview/iview/)
 
 >注意
@@ -201,7 +205,8 @@ Mock.mock(/\/users\/v1\/actions\/login/,'post',mockAPI.login);
 **基于http客户端的promise，面向浏览器和nodejs**
 
 [![axios](https://img.shields.io/badge/axios-0.16.2-brightgreen.svg)](https://github.com/mzabriskie/axios)
-> vue更新到2.0之后，就宣告不再对vue-resource更新，而是推荐的axios
+> -vue更新到2.0之后，就宣告不再对vue-resource更新，而是推荐的axios
+> -将当前的http请求方法绑定在vm对象中,可直接使用例如`vm.$get()`
 
 **相关地址**
 - [源码地址](https://github.com/mzabriskie/axios)
@@ -209,6 +214,7 @@ Mock.mock(/\/users\/v1\/actions\/login/,'post',mockAPI.login);
 
 **使用**
 - 文件位置`common/api/http.js`
+
   ```javascript
 	//get请求
 	http.get(getUrl, params).then(data =>{
@@ -223,7 +229,8 @@ Mock.mock(/\/users\/v1\/actions\/login/,'post',mockAPI.login);
 	}).catch(error=>{
 
 	})
-			//delete 请求
+
+	//delete 请求,单个操作用
 	http.delete(delUrl).then(data =>{  
 
 	}).catch(error=>{
@@ -238,14 +245,14 @@ Mock.mock(/\/users\/v1\/actions\/login/,'post',mockAPI.login);
           if (data){
             const user = data.result;
             if (user){
-              commit('SET_NAME', user.userChineseName);  
+              commit('SET_NAME', user.userChineseName);  //提交到vuex存储
               commit('SET_CODE', user.userCode);
             } else {
               return Message({
                 message: '获取用户信息失败',
                 type: 'error',
                 showClose: true,
-                duration: 5 * 1000
+                duration: 2 * 1000
               });
             }
           }
@@ -288,9 +295,9 @@ computed: {
 }
 //组件中使用
 this.$store.dispatch('toggleSideBar')  //vue当前组件对象中使用
-this.$store.commit('SET_LANG',e);  //提交数据存储到vuex对象
+this.$store.commit('SET_LANG',e);  //提交数据到vuex对象
 //js中使用
-store.dipatch('login')   
+store.dipatch('login')   //import依赖后使用对象调用,转发到actions相应方法
 ```
 
 ### vue-router 路由
@@ -303,37 +310,51 @@ store.dipatch('login')
 - [router导航信息配置](https://router.vuejs.org/zh-cn/api/route-object.html)
 
 **实例介绍**
-```javascript
-//main.js
-import router from 'common/router';
+- 目录结构`src/common`
 
-//router/index.js
-//设置当前系统的默认路由导航
-export const constantRouterMap = [{
-	path: '/login',component:_import('login/LoginPage'), hidden:true
-},
-{
-	path: '/',
-	name: '首页',
-	component: LeoLayout,
-	redirect: '/main',
-	hidden: true,
-	children: [
-		{ path: '/main', component: homepage }
-	]
-}];
-//创建路由
-export default new Router({
-	mode:'history',  //此模式适用服务端
-	routes: constantRouterMap
-});
 
-//permissionMenu.js
-//导航拦截,用来完成跳转
-router.beforeEach((to, from, next) => {});
-//完成导航
-router.afterEach(() => {});
-```
+		|-- stores                               
+		|   |-- `_import_components.js`             //懒加载配置   
+		|   |-- `getters.js`                        // 动态导航钩子
+		|   |-- `index.js`                         // router实例
+- 使用
+  ```javascript
+  //main.js
+  import router from 'common/router';
+  import 'common/router/dynamicRouter';
+
+  //router/index
+  //创建路由
+  export default new Router({
+    mode:'history',
+    base: '/leo-face/'
+  });
+
+  //router/dynamicRouter.js
+  //设置当前系统的默认路由导航
+  const constantRouterMap = [{
+    path: '/',
+    name: '',
+    component: LeoLayout,
+    redirect: '/main',
+    hidden: true,
+    children: [
+      {
+        path: '/main',
+        component: homepage,
+        name:'首页',
+        beforeEnter: (to, from, next) => {
+          store.dispatch('addVisitedViews',to);  //首页标签页的初始化
+          next();
+        }
+      }
+    ]
+  }];
+  //导航拦截,用来完成跳转
+  router.beforeEach((to, from, next) => {});
+  //完成导航
+  router.afterEach(() => {});
+  ```
 
 ### 布局 ###
 项目的主体框架布局
@@ -343,63 +364,39 @@ router.afterEach(() => {});
 
 		|  -- main                              // 首页目录
 		|    |-- Layout.vue                    // 主组件
-		|    |-- siderbar.vue                  // 左侧菜单面板组件
-		|    |-- siderbarItem.vue              // 左侧菜单路由渲染组件
+		|    |-- Siderbar.vue                  // 左侧菜单面板组件
+		|    |-- SiderbarItem.vue              // 左侧菜单路由渲染组件
 		|    |-- Navbar.vue                    // 头部组件
 		|    |-- Levelbar.vue                  // 面包屑组件
 		|    |-- TabsView.vue                  // 基于tags的标签页组件(后续修改为tabs)
 		|    |-- AppMain.vue                   // 右侧内容布局组件
 
->布局虽统一,但可扩展功能,不同情况下可添加组件和样式修改
+- 布局概述
+  - Layout：布局容器，其下可嵌套 Navbar Siderbar AppMain 或 Layout 本身，可以放在任何父容器中。
+  - Navbar：顶部布局，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。
+  - Siderbar：左侧菜单面板组件，只能放在 Layout 中。
+  - SiderbarItem：左侧菜单路由渲染组件,只能放在 Siderbar 中。
+  - AppMain：内容部分，自带默认样式，其下可嵌套任何元素，只能放在 Layout 中。
+
 
 ### 内容页 ###
-- 表单,表格的一致性风格
+- 表单,表格的一致风格
 ```html
 <template>
   <div class="app-container">
     <div class="filter-container">
-	<Form :label-width="80">
-        <el-row>
-          <el-col :span="5">
-            <Form-item label="系统编码">
-              <static-selector :params="codeSelector" ref="staticSelector"></static-selector>
-            </Form-item>
-          </el-col>
-
-          <el-col :span="5">
-            <Form-item label="系统名称">
-              <dynamic-selector :params="nameSelector" ref="dynamicSelector"></dynamic-selector>
-            </Form-item>
-          </el-col>
-
-          <el-col :span="5">
-            <Form-item label="系统编码">
-              <Input  placeholder="输入系统名称"/>
-            </Form-item>
-          </el-col>
-          <el-col :span="5">
-            <Form-item>
-              <Button size="small" type='primary' icon="search" @click="clickSearch">查 询</Button>
-              <Button size="small" type='primary' icon="refresh" @click="clickReset">重 置</Button>
-            </Form-item>
-          </el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="5">
-            <Form-item label="系统名称">
-              <Input placeholder="输入系统名称"/>
-            </Form-item>
-          </el-col>
-          <el-col :span="6">
-            <Form-item label="创建日期">
-              <date-time-multiple :emptyText="dateEmptyText" ref="dateMultiple"></date-time-multiple>
-            </Form-item>
-          </el-col>
-        </el-row>
+        <Form :label-width="80">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <Form-item label="系统编码">
+                <static-selector :params="codeSelector" ref="staticSelector"></static-selector>
+              </Form-item>
+            </div>
+        </div>
       </Form>
     </div>
     <div class="panel-container">
-		   这里是表格内容...
+
     </div>
   </div>
 </template>
@@ -419,15 +416,15 @@ router.afterEach(() => {});
 			</el-col>
 			```
 
-  		- `script`
+		- `script`
 			```javascript
 			data () {
 			return {
-			codeSelector: {
-				selectAt: 'all',     //设置默认值
-				emptyText: '选择系统编码',  //设置默认文本提示,默认值是:'请选择'
-				remoteUrl: '/sub-systems/v1/display' //获取数据的url
-			}
+    			codeSelector: {
+    				selectAt: 'all',     //设置默认值
+    				emptyText: '选择系统编码',  //设置默认文本提示,默认值是:'请选择'
+    				remoteUrl: '/sub-systems/v1/display' //获取数据的url
+    			}
 				}
 			}
 			```
@@ -448,7 +445,7 @@ router.afterEach(() => {});
 			data () {
 				return {
 					nameSelector: {
-						emptyText: '选择系统编码',  //设置默认文本提示,默认值是:'请选择'
+						emptyText: '搜索系统名称',  //设置默认文本提示,默认值是:'请选择'
 						remoteUrl: '/sub-systems/v1/systemName' //获取数据的url
 					}
 				}
@@ -456,6 +453,7 @@ router.afterEach(() => {});
 			```
 
 > 说明:
+>- 后端返回的类型是`Array`
 >- `:params`自定义属性,该属性封装了父组件传递给子组件的信息
 >- `ref`属性用于获取子组件信息进行通信,在当前vue对象中使用`this.$refs.XXX`获取子组件
 >- `@selectChange`自定义选择事件,当前组件选择option后触发
@@ -470,63 +468,41 @@ router.afterEach(() => {});
 
 - `template`
 ```html
-<el-row class="filter-btn">
-  <el-col align="right">
-    <Button size="small" icon="plus" @click="clickAdd">新 增</Button>
-    <Button size="small" icon="edit" @click="clickUpdate" :disabled="updateDisabled">修 改</Button>
-    <Button size="small" icon="trash-b" @click="clickDelete" :disabled="delDisabled">删 除</Button>
-    <Button size="small" icon="ios-download" @click="exportData">导 出</Button>
-  </el-col>
-</el-row>
-<el-table
-   ref="systemTable"
-   :data="list"
-   v-loading.body="listLoading"
-   border fit highlight-current-row
-   tooltip-effect="dark"
-   @selection-change="handleSelectionChange"
-   style="width: 100%">
-
-   <el-table-column type="selection"              @selection-change="handleSelectionChange">
-   </el-table-column>
-
-   <el-table-column align="center" v-if="false" prop="id" label="id">
-   </el-table-column>
-
-   <el-table-column
-   show-overflow-tooltip
-   v-for="column in columns"
-   :prop="column.prop"
-   :label="column.label"
-   :width="column.width"
-   :min-width="column.minWidth"
-   :align="column.align"
-   :key="column.prop">
-   </el-table-column>
-
-   <el-table-column show-overflow-tooltip align="center" prop="createTime" label="创建时间" :formatter="dateFormatter">
-   </el-table-column>
-
-   <el-table-column show-overflow-tooltip align="center" prop="modifyTime" label="修改时间" :formatter="dateFormatter">
-   </el-table-column>
-   </el-table>
-
-   <div v-show="!listLoading" class="grid-pagination" align="right">
-     <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="listQuery.page"
-                 :page-sizes="tablePaginationSize" :page-size="listQuery.limit" layout="total, sizes, prev, pager, next, jumper" :total="total">
-  </el-pagination>
-</div>
+  <div class="row filter-btn" align="right" :test="test">
+    <basic-button btnType="Search" @click="clickSearch"></basic-button>
+    <basic-button btnType="Reset" @click="clickReset"></basic-button>
+    <basic-button btnType="Add" @click="clickAdd"></basic-button>
+    <basic-button btnType="Edit" @click="clickEdit" :disabled="updateDisabled"></basic-button>
+    <basic-button btnType="Delete" @click="clickDelete" :disabled="updateDisabled"></basic-button>
+    <basic-button btnType="Export" @click="exportData"></basic-button>
+  </div>
+  <general-table :gridInstance="gridData" ref="generalGrid" @fetchGridData="paginationList" @selectChange="handleSelectionChange"></general-table>
 ```
-- 主要相关的`script`
+- 相关的`script`
   ```javascript
   //data对象
   //表格的模板列
-  columns: [
-    { prop: 'systemCode', label: '系统编码',align:'center' },
-    { prop: 'systemName', label: '系统名称',align:'center' },
-    { prop: 'entryUrl', label: 'URL地址', minWidth: '150',align:'center' },
-    { prop: 'createUserCode', label: '创建人工号',align:'center' }
-  ]
+  gridData: {
+      checkBox:'selection',
+      columns:[{
+        key: 'id'
+      },
+      {
+        title: this.$t('childSystem.commonLang.systemCode'),
+        key: 'systemCode'
+      },
+      {
+        title: this.$t('childSystem.commonLang.systemName'),
+        key: 'systemName'
+      },
+      {
+        title: this.$t('childSystem.tableLang.createTime'),
+        key: 'createTime',
+        render: (h, params) => {
+           return this.dateFormatter(params.row,params.column);
+        }
+      }]
+   }
   //computed
   computed : {
     ...mapGetters([
@@ -538,8 +514,8 @@ router.afterEach(() => {});
   paginationList(){  
      //fetch data
   },
-  handleSelectionChange(val){  //表格选择处理
-    this.multipleSelection = val;
+  handleSelectionChange(rows){  //表格选择处理
+    this.multipleSelection = rows;
   },
   handleSizeChange(val) { //分页
     this.listQuery.limit = val;
@@ -559,10 +535,36 @@ router.afterEach(() => {});
   ```
 
 >说明
-- 表格使用的是`elementUI`最基本的表格,需要扩展请自行开发
-- 表格的首列是`checkbox`可选择列,单独定义一列,设置`type`属性为`selection`,并且绑定选择事件`@selection-change="handleSelectionChange"`
-- 模板列,使用`v-for`指令遍历定义的列模板数据
-- 数据渲染,`:formatter`属性,指定方法进行返回值渲染
+- `basic-button`组件,封装了基础的按钮和国际化信息
+- `general-table`使用的是`iview`的单行数据的`table`组件和`page`分页组件
+  - `checkBox`属性,设置表格支持多选
+  - `columns`属性,表格的列渲染,`render`属性,指定方法进行返回值渲染
+  - `fetchGridData`事件,绑定当前表格查询事件即可自动分页查询
+  - `selectChange`事件,绑定当前表格`chekcbox`选择事件
+
+### 前端国际化 ###
+页面组件,文本的信息国际化切换
+
+ [![vue-i18n](https://img.shields.io/badge/vue--i18n-5.0x-brightgreen.svg)](http://kazupon.github.io/vue-i18n/old/)
+
+- `assets/i18n/locale.js`本地语言国际化信息
+- 在入口文件中`main.js`合并了本地语言国际化信息和`iview`的国际化
+
+`template`中使用
+```html
+<Form-item :label="$t('childSystem.searchForm.testLayout')">
+  <Input :placeholder="$t('childSystem.searchForm.testPlaceholder')"/>
+</Form-item>
+```
+
+`script`中使用
+```javascript
+this.$Message.warning({
+    content: this.$t('global.chooseRow'),
+    showClose: true
+});
+```
+>注意`locale.js`中语言对象的声明规则
 
 ### 其他 ###
 **font**
