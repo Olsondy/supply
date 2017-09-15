@@ -12,4 +12,4 @@
 * Frontend
     * Extjs 5.x
     * vue 2.4.x
-    * element UI 1.4.x
+    * Element UI 1.4.x
