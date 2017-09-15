@@ -1,10 +1,13 @@
 # 前端项目vue2+webpack+cas+nginx+htts服务部署
-## 前言 ##
- > 使用springboot作为后端的微服务,边学边做折腾了一个月的vue前端,项目也差不多了完成了一个功能,准备发布下测试环境了,但是问题来了.服务器上的后端服务是接入了cas中央认证服务的单点登录的,所以是基于https的,那就使用nginx大法搭建一个全站https吧
 
-## vue2项目中的配置 ##
-- 在webpack配置里主要还是`config/index.js`的`assetsPublicPath`的设置
-``` javascript
+## 前言
+
+> 使用springboot作为后端的微服务,边学边做折腾了一个月的vue前端,项目也差不多了完成了一个功能,准备发布下测试环境了,但是问题来了.服务器上的后端服务是接入了cas中央认证服务的单点登录的,所以是基于https的,那就使用nginx大法搭建一个全站https吧
+
+## vue2项目中的配置
+
+* 在webpack配置里主要还是`config/index.js`的`assetsPublicPath`的设置
+  ```javascript
   //config/index.js
   module.exports = {
   build: {
@@ -41,18 +44,19 @@
     // just be aware of this issue when enabling this option.
     cssSourceMap: false
   }
-}
-```
-> 注意: 项目是用vue-cli脚手架搭建的,就有这个`config`目录
--  构建的配置路径弄好了.就要执行相应的命令了
- ```bash
-npm run build:test
-```
--  附上`packagejson`中`script`的命令
-```java
-"build:test": "cross-env NODE_ENV=testing npm_config_preview=true  npm_config_report=true node build/build.js",
-```
-- vue-cli生成的模板是没有这个命令的,这是我自己自定义的命令.首先会找到`build/build.js`读取相应配置,读取的还是`webpack.prod.conf.js`这个配置,但是我在这个webpack profile中做了一些修改
+  }
+  ```
+
+  > 注意: 项目是用vue-cli脚手架搭建的,就有这个`config`目录
+* 构建的配置路径弄好了.就要执行相应的命令了
+  ```bash
+  npm run build:test
+  ```
+* 附上`packagejson`中`script`的命令
+  ```java
+  "build:test": "cross-env NODE_ENV=testing npm_config_preview=true  npm_config_report=true node build/build.js",
+  ```
+* vue-cli生成的模板是没有这个命令的,这是我自己自定义的命令.首先会找到`build/build.js`读取相应配置,读取的还是`webpack.prod.conf.js`这个配置,但是我在这个webpack profile中做了一些修改
 
 ```javascript
  // 调用方法,判断引入的后端接口地址
@@ -95,31 +99,37 @@ module.exports = merge(devEnv, {
   BASE_API: '"https://test.hoau.net/leo"',   //整个应用后端请求的地址
 })
 ```
-- 打包环境配置好了,包也打好了生成的目录就是这样的,下图
 
-![file catalog](https://github.com/javady/vue-nginx-assets/blob/master/file%20catalog.png?raw=true)
+* 打包环境配置好了,包也打好了生成的目录就是这样的,下图
 
-- 现在还不能直接去折腾nginx,因为还有个重要的设置没有更改,如果你的项目中使用的vue-router,想部署上服务器有优雅的路径,那么现在就需要设置你的router对象属性了
-```javascript
-//创建路由
-export default new Router({
+![file catalog](https://github.com/javady/vue-nginx-assets/blob/master/file catalog.png?raw=true)
+
+* 现在还不能直接去折腾nginx,因为还有个重要的设置没有更改,如果你的项目中使用的vue-router,想部署上服务器有优雅的路径,那么现在就需要设置你的router对象属性了
+
+  ```javascript
+  //创建路由
+  export default new Router({
   mode:'history',  
   base: '/leo-face/',
   routes: constantRouterMap
-});
-```
-> 参数我就不说明了,百度,官方一堆介绍
+  });
+  ```
 
-- 好了下面可以去折腾一下nginx了,由于我在本地已经搭建过nginx,也没有问题,所以就直接上服务器折腾.
+  > 参数我就不说明了,百度,官方一堆介绍
 
-## Nginx 相关配置 ##
-- 服务器是linux的,和mac的差别不大.但是因为我是用homebrew装的nginx,只是目录有点不一样而已,附上自己三脚猫的画图功夫的流程图.
+* 好了下面可以去折腾一下nginx了,由于我在本地已经搭建过nginx,也没有问题,所以就直接上服务器折腾.
+
+## Nginx 相关配置
+
+* 服务器是linux的,和mac的差别不大.但是因为我是用homebrew装的nginx,只是目录有点不一样而已,附上自己三脚猫的画图功夫的流程图.
 
 ![image.png](https://github.com/javady/vue-nginx-assets/blob/master/vue+nginx.png?raw=true)
 
-## https域名入口服务器的nginx.conf配置,这台服务器是215 ##
-- linux上的`nginx/config`目录`nginx.conf`配置
-```bash
+## https域名入口服务器的nginx.conf配置,这台服务器是215
+
+* linux上的`nginx/config`目录`nginx.conf`配置
+
+  ```bash
     //后端服务负载策略
     upstream leo {
         server   10.39.232.213:8424 weight=1;
@@ -131,7 +141,7 @@ export default new Router({
         server   10.39.232.214:443 weight=1;
     }
 
- //server配置
+  //server配置
   server {
         listen       443;
         server_name  testx.hoau.net;
@@ -184,10 +194,12 @@ export default new Router({
             add_header  Nginx-Cache "$upstream_cache_status";
         }
     }
-```
-> 重启nginx服务器访问测试nginx的https是否开启
+  ```
+
+  > 重启nginx服务器访问测试nginx的https是否开启
 
 ## 转发服务器nginx.conf的配置
+
 ```bash
 server {
     listen       443;
@@ -219,26 +231,30 @@ server {
 ```
 
 > 相关说明:
-> - 213 服务器的证书可以从入口服务器215上面拷贝一份过来,保持一致,ssl配置也可以拷贝
-> - ` try_files $uri $uri/ /leo-face/index.html;   `由于页面是由js内部进行加载的,匹配当前url的所有地址,没有页面重定向到index.html. [官方说明](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
-> - 有人觉得我后台服务为什么没有配置ssl? 上图已经声明了,后端springboot微服务使用的是consul这个分布式服务发现和共享配置的解决方案,在应用启动时读取了consul配置中心开启的springboot应用内置tomcat容器的ssl配置..并且证书放在应用包中.
+>
+> * 213 服务器的证书可以从入口服务器215上面拷贝一份过来,保持一致,ssl配置也可以拷贝
+> * `try_files $uri $uri/ /leo-face/index.html;`由于页面是由js内部进行加载的,匹配当前url的所有地址,没有页面重定向到index.html. [官方说明](https://router.vuejs.org/zh-cn/essentials/history-mode.html)
+> * 有人觉得我后台服务为什么没有配置ssl? 上图已经声明了,后端springboot微服务使用的是consul这个分布式服务发现和共享配置的解决方案,在应用启动时读取了consul配置中心开启的springboot应用内置tomcat容器的ssl配置..并且证书放在应用包中.
 
-## 发布 ##
-- 配置全部都完成了,接下来就是关键的点了.发布你的前端应用,记得前面打包好的文件了吧.
-   - 在nginx负载转发出去的应用服务器上(文章中是213,214俩台服务器)的`nginx/html`目录下新建一个`leo-face`目录.把文件拷贝进去.
-   - 现在你的访问目录就应该像这样`https://test.xxx.net/leo-face`
-   - 启动nginx或者重启nginx,`nginx -s reload`
+## 发布
 
->   - 新建文件夹的名称是因为之前打包时webpack中配置了`assetsPublicPath`的路径就是这个名字,所以在`index.html`引入的js,css地址前缀也会带这个名称
+* 配置全部都完成了,接下来就是关键的点了.发布你的前端应用,记得前面打包好的文件了吧.
+  * 在nginx负载转发出去的应用服务器上\(文章中是213,214俩台服务器\)的`nginx/html`目录下新建一个`leo-face`目录.把文件拷贝进去.
+  * 现在你的访问目录就应该像这样`https://test.xxx.net/leo-face`
+  * 启动nginx或者重启nginx,`nginx -s reload`
 
-- 好了,现在访问一下看看,OK~ 完美...
+> * 新建文件夹的名称是因为之前打包时webpack中配置了`assetsPublicPath`的路径就是这个名字,所以在`index.html`引入的js,css地址前缀也会带这个名称
+
+* 好了,现在访问一下看看,OK~ 完美...
+
+![https main.png](https://github.com/javady/vue-nginx-assets/blob/master/https main.png?raw=true)
+
+## 会遇到的问题
+
+> * nginx入口服务器 配置相同域名多个访问路径时.是有匹配规则的,比如我把leo-face放在leo下就不能访问到/leo-face这个地址了
+> * 如按照文章中的顺序无法接入成功,则 先可以配置基于http单点应用服务器的nginx是否可以正常访问前端应用.后面再将https入口服务接入负载转发到应用服务器上
+
+### 以上内容就是这个前端的单页应用发布所有步骤了
 
 
-![https main.png](https://github.com/javady/vue-nginx-assets/blob/master/https%20main.png?raw=true)
 
-
-##  会遇到的问题 ##
-> - nginx入口服务器 配置相同域名多个访问路径时.是有匹配规则的,比如我把leo-face放在leo下就不能访问到/leo-face这个地址了
-> - 如按照文章中的顺序无法接入成功,则 先可以配置基于http单点应用服务器的nginx是否可以正常访问前端应用.后面再将https入口服务接入负载转发到应用服务器上
-
-### 以上内容就是这个前端的单页应用发布测试环境的所有步骤了.但是发布正式环境可能还不是完全一致
