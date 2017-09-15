@@ -9,5 +9,5 @@
 * [zookeeper VS consul](zookeeper-vs-consul.md)
 * [confd consul vagrant](confd-consul-vagrant.md)
 * [vue2+vue-router+vuex](vue2+vue-router+vuex.md)
-* deploy nginx+vue
+* [deploy nginx+vue](deploy-nginx+vue.md)
 
