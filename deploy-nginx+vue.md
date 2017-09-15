@@ -234,7 +234,7 @@ server {
 - 好了,现在访问一下看看,OK~ 完美...
 
 
-![https main.png](http://upload-images.jianshu.io/upload_images/648951-339660de6e651d70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![https main.png](https://github.com/javady/vue-nginx-assets/blob/master/https%20main.png?raw=true)
 
 
 ##  会遇到的问题 ##
