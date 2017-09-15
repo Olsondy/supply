@@ -97,7 +97,7 @@ module.exports = merge(devEnv, {
 ```
 - 打包环境配置好了,包也打好了生成的目录就是这样的,下图
 
-![file intr](http://upload-images.jianshu.io/upload_images/648951-109832cec33f09c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![file catalog](http://upload-images.jianshu.io/upload_images/648951-109832cec33f09c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 - 现在还不能直接去折腾nginx,因为还有个重要的设置没有更改,如果你的项目中使用的vue-router,想部署上服务器有优雅的路径,那么现在就需要设置你的router对象属性了
 ```javascript
