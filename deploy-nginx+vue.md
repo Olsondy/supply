@@ -115,7 +115,7 @@ export default new Router({
 ## Nginx 相关配置 ##
 - 服务器是linux的,和mac的差别不大.但是因为我是用homebrew装的nginx,只是目录有点不一样而已,附上自己三脚猫的画图功夫的流程图.
 
-![image.png](http://upload-images.jianshu.io/upload_images/648951-d431b88f42bdbff2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image.png](https://github.com/javady/vue-nginx-assets/blob/master/vue+nginx.png?raw=true)
 
 ## https域名入口服务器的nginx.conf配置,这台服务器是215 ##
 - linux上的`nginx/config`目录`nginx.conf`配置
