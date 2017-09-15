@@ -542,7 +542,7 @@ store.dipatch('login')   //import依赖后使用对象调用,转发到actions相
   - `fetchGridData`事件,绑定当前表格查询事件即可自动分页查询
   - `selectChange`事件,绑定当前表格`chekcbox`选择事件
 
-### 前端国际化 ###
+### 前端国际化(暂时单文件国际化) ###
 页面组件,文本的信息国际化切换
 
  [![vue-i18n](https://img.shields.io/badge/vue--i18n-5.0x-brightgreen.svg)](http://kazupon.github.io/vue-i18n/old/)
